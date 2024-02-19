@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head'); %>
-    <title><%= post.titleBlog %></title>
-</head>
-<body>
-    <main>
-    <h1><%= post.titleBlog %></h1>
-    <p><strong>Author:</strong> <%= post.author %></p>
-    <p><strong>Tags:</strong> <%= post.tags %></p>
-    <p><%= post.content %></p>
-    <a href="/">Back to Overview</a>
-</main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <footer>
-        <%- include('../partials/footer'); %>
-      </footer>
-</body>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title><%= post.titleBlog %></title>
+  </head>
+  <body>
+    <main>
+      <h1><%= post.titleBlog %></h1>
+      <p><strong>Author:</strong> <%= post.author %></p>
+      <p><strong>Tags:</strong> <%= post.tags %></p>
+      <p><%= post.content %></p>
+      <a href="/">Back to Overview</a>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
 </html>
