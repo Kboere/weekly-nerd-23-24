@@ -4,11 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
+	      rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <title><%= post.titleBlog %></title>
+    <title>Post - <%= post.titleBlog %></title>
   </head>
   <body>
+
+    <header>
+      <a href="/newpost">New Post</a>
+      <a href="/">Back to Overview</a>  
+      <a href="/posts/<%= post._id %>/edit">edit post</a>
+    </header>
+
     <main>
       <h1><%= post.titleBlog %></h1>
       <p><strong>Author:</strong> <%= post.author %></p>

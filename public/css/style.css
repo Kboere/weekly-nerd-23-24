@@ -1,3 +1,145 @@
-body{
-    background-color: white;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bgClrFooter: #f7f7f7;
+  --bgAccentClrFooter: #dfe3ff;
+
+  --borderRadiusLg: 1rem;
+}
+
+/* ================================= 
+    Algemene stijling
+  ==================================== */
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+/* // buttton styling */
+
+.contactButton {
+  background: #7079f0;
+  color: white;
+  font-family: inherit;
+  padding: 0.45em;
+  padding-left: 1em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3em;
+}
+
+.iconButton {
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.contactButton:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em #5566c2;
+}
+
+.contactButton:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em #5566c2;
+}
+
+.contactButton:focus {
+  outline: 8px ridge rgba(220, 50, 112, 0.6);
+}
+
+/* ================================= 
+    Main stijling blog overview
+  ==================================== */
+main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+main ul {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+main ul li {
+  list-style: none;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-radius: var(--borderRadiusLg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ================================= 
+    Footer stijling
+  ==================================== */
+
+footer {
+  position: relative;
+  background-color: var(--bgClrFooter);
+  padding: 0 0 1rem 0;
+  text-align: center;
+  margin-top: 17rem;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+footer p {
+  font-weight: 300;
+}
+
+section.top-footer {
+  position: relative;
+  bottom: 20px;
+  background-color: var(--bgAccentClrFooter);
+  padding: 2rem;
+  color: #fff;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: var(--borderRadiusLg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.top-footer h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
