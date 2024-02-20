@@ -1,5 +1,7 @@
 require("dotenv").config();
 const express = require("express");
+const multer = require("multer");
+const path = require("path");
 
 const app = express();
 
@@ -12,7 +14,15 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 const dbName = "blogs";
-client.connect();
+
+client
+  .connect()
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
 
 // collections aanroepen
 const db = client.db(dbName);
@@ -23,14 +33,62 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+// Configure Multer for handling file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/uploads"); // Destination folder for storing uploaded images
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+
+
+
 // Define routes
 app.get("/", async function (req, res) {
   try {
     // Retrieve all posts from the database
     const allPosts = await posts.find().toArray();
 
+    function getClassForTag(tag) {
+        
+        // Check if tag is an array
+        if (Array.isArray(tag)) {
+            // Extract the first element of the array
+            if (tag.length > 0) {
+                tag = tag[0];
+            } else {
+                console.log("Empty tag array, default class applied.");
+                return "default-class";
+            }
+        }
+        
+        // Check if tag is defined and is a string
+        if (typeof tag === 'string') {
+            // Trim whitespace from the tag
+            tag = tag.trim();
+            console.log("Trimmed tag value:", tag);
+            
+            // Check the trimmed tag value
+            if (tag === "HTML") {
+                return "html-class";
+            } else if (tag === "CSS") {
+                return "css-class";
+            } else if (tag === "JS") {
+                return "js-class";
+            }
+        }
+        
+        // If tag is not a string or doesn't match any condition, return default class
+        return "default-class";
+    }
+    
+    
+    
     // Render the index template and pass the posts data
-    res.render("pages/index", { posts: allPosts });
+    res.render("pages/index", { posts: allPosts, getClassForTag });
   } catch (err) {
     console.error("Error retrieving posts:", err);
     res.status(500).send("Internal Server Error");
@@ -75,29 +133,37 @@ app.get("/posts/:postId/edit", async (req, res) => {
 });
 
 // Define route for updating a post
-app.post("/posts/:postId/edit", async (req, res) => {
-    try {
-      const postId = req.params.postId;
-      const updatedPostData = {
-        titleBlog: req.body.title,
-        author: req.body.author,
-        tags: req.body.tags.split(",").map((tag) => tag.trim()),
-        content: req.body.content,
-      };
-      // Update the post in the database
-      await posts.updateOne(
-        { _id: new ObjectId(postId) },
-        { $set: updatedPostData }
-      );
-  
-      // Redirect to the post page with the success message as a query parameter
-      res.redirect(`/posts/${postId}`);
-    } catch (err) {
-      console.error("Error updating post:", err);
-      res.status(500).send("Internal Server Error");
-    }
-  });
-  
+app.post("/posts/:postId/edit", upload.single("image"), async (req, res) => {
+  try {
+    const postId = req.params.postId;
+    const updatedPostData = {
+      image: `/uploads/${req.file.filename}`,
+      Gastnaam: req.body.guestName,
+      FunctieGast: req.body.guestJob,
+      Quote: req.body.guestQuote,
+      Bedrfijfsurl: req.body.guestCompany,
+      Skills: req.body.guestSkillset.split(",").map((tag) => tag.trim()),
+      Mail: req.body.guestMail,
+      Social: req.body.guestSocial,
+      GastlesNR: parseInt(req.body.guestNumber),
+      GastlesThema: req.body.guestTheme,
+      GastlesDatum: req.body.guestDate,
+      Tags: req.body.tags.split(",").map((tag) => tag.trim()),
+      Content: req.body.content,
+    };
+    // Update the post in the database
+    await posts.updateOne(
+      { _id: new ObjectId(postId) },
+      { $set: updatedPostData }
+    );
+
+    // Redirect to the post page with the success message as a query parameter
+    res.redirect(`/posts/${postId}`);
+  } catch (err) {
+    console.error("Error updating post:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 // Define route for deleting a post
 app.post("/posts/:postId/remove", async (req, res) => {
@@ -120,14 +186,23 @@ app.get("/newpost", function (req, res) {
 });
 
 // zoekresultaten page
-app.post("/posts", async (req, res) => {
+app.post("/posts", upload.single("image"), async (req, res) => {
   try {
     // Construct a document
     const newblog = {
-      titleBlog: req.body.title,
-      author: req.body.author,
-      tags: req.body.tags.split(",").map((tag) => tag.trim()),
-      content: req.body.content,
+      image: `/uploads/${req.file.filename}`,
+      Gastnaam: req.body.guestName,
+      FunctieGast: req.body.guestJob,
+      Quote: req.body.guestQuote,
+      Bedrfijfsurl: req.body.guestCompany,
+      Skills: req.body.guestSkillset.split(",").map((tag) => tag.trim()),
+      Mail: req.body.guestMail,
+      Social: req.body.guestSocial,
+      GastlesNR: parseInt(req.body.guestNumber),
+      GastlesThema: req.body.guestTheme,
+      GastlesDatum: req.body.guestDate,
+      Tags: req.body.tags.split(",").map((tag) => tag.trim()),
+      Content: req.body.content,
     };
 
     // Insert a single document, wait for promise so we can read it back

@@ -67,7 +67,7 @@ body {
   box-shadow: 0.05em 0.05em #5566c2;
 }
 
-.contactButton:focus {
+.contactButton:focus-visible {
   outline: 8px ridge rgba(220, 50, 112, 0.6);
 }
 
@@ -84,24 +84,99 @@ main {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-main ul {
+main .overview {
   position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1280px;
+  margin-top: 50px;
 }
-main ul li {
+main .overview a {
+  text-decoration: none;
+  color: #000;
+}
+main .overview article {
   list-style: none;
-  margin: 1rem;
-  padding: 1rem;
-  background-color: #f7f7f7;
+  margin-bottom: 2rem;
   border-radius: var(--borderRadiusLg);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 300px;
-  height: 300px;
+  width: calc(100% / 3 - 1rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+main .overview article .article-top {
+  position: relative;
+  background: #f7f7f7;
+  border-radius: var(--borderRadiusLg);
+  height: 200px;
+}
+main .overview article .article-top:after {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 40px;
+  top: 3px;
+  right: 10px;
+  background-image: url(../img/overlay-logo.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+main .overview article .article-top img {
+  position: relative;
+  width: 80%;
+  height: 200px;
+  top: 20px;
+  object-fit: contain;
+  border-radius: var(--borderRadiusLg) var(--borderRadiusLg) 0 0;
+}
+main .overview article .article-top p {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  border-top-left-radius: var(--borderRadiusLg);
+  border-bottom-left-radius: var(--borderRadiusLg);
+  color: #fff;
+  word-break: break-word;
+}
+
+main .overview article .article-bottom {
+  padding: 1rem 2rem 2rem;
+}
+main .overview article .article-bottom span {
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+main .overview article .article-bottom span.html-class {
+    background-color: #dfe3ff;
+}
+main .overview article .article-bottom span.css-class {
+  background-color: #FCC6C6
+}
+main .overview article .article-bottom span.js-class {
+  background-color: #FFFBDE
+}
+
+main .overview article .article-bottom span.themes {
+    background-color: #EDEDED
+  }
+main .overview article .article-bottom h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+main .overview article .article-bottom quote {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* ================================= 
@@ -110,23 +185,19 @@ main ul li {
 
 footer {
   position: relative;
-  background-color: var(--bgClrFooter);
-  padding: 0 0 1rem 0;
   text-align: center;
-  margin-top: 17rem;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 footer p {
   font-weight: 300;
+  width: 100%;
+  background-color: var(--bgClrFooter);
+  padding: 5rem 1rem 1rem 1rem;
 }
 
 section.top-footer {
   position: relative;
-  bottom: 20px;
+  bottom: -3rem;
   background-color: var(--bgAccentClrFooter);
   padding: 2rem;
   color: #fff;
@@ -142,4 +213,20 @@ section.top-footer {
 section.top-footer h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+  main .overview {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  main .overview article {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.top-footer {
+    width: 90%;
+  }
 }
