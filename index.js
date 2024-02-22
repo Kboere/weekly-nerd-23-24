@@ -142,14 +142,14 @@ app.post("/posts/:postId/edit", upload.single("image"), async (req, res) => {
       FunctieGast: req.body.guestJob,
       Quote: req.body.guestQuote,
       Bedrfijfsurl: req.body.guestCompany,
-      Skills: req.body.guestSkillset.split(",").map((tag) => tag.trim()),
+      Skills: req.body.guestSkillset,
       Mail: req.body.guestMail,
       Social: req.body.guestSocial,
       GastlesNR: parseInt(req.body.guestNumber),
       GastlesThema: req.body.guestTheme,
       GastlesDatum: req.body.guestDate,
       Tags: req.body.tags.split(",").map((tag) => tag.trim()),
-      Content: req.body.content,
+      Content: req.body.quillContent,
     };
     // Update the post in the database
     await posts.updateOne(
@@ -188,6 +188,9 @@ app.get("/newpost", function (req, res) {
 // zoekresultaten page
 app.post("/posts", upload.single("image"), async (req, res) => {
   try {
+
+    const quillContent = req.body.quillContent;
+  console.log("Quill content:", quillContent);
     // Construct a document
     const newblog = {
       image: `/uploads/${req.file.filename}`,
@@ -195,14 +198,14 @@ app.post("/posts", upload.single("image"), async (req, res) => {
       FunctieGast: req.body.guestJob,
       Quote: req.body.guestQuote,
       Bedrfijfsurl: req.body.guestCompany,
-      Skills: req.body.guestSkillset.split(",").map((tag) => tag.trim()),
+      Skills: req.body.guestSkillset,
       Mail: req.body.guestMail,
       Social: req.body.guestSocial,
       GastlesNR: parseInt(req.body.guestNumber),
       GastlesThema: req.body.guestTheme,
       GastlesDatum: req.body.guestDate,
       Tags: req.body.tags.split(",").map((tag) => tag.trim()),
-      Content: req.body.content,
+      Content: req.body.quillContent,
     };
 
     // Insert a single document, wait for promise so we can read it back

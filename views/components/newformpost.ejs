@@ -51,7 +51,9 @@
   <div class="step" id="step3">
     <h2>Gastles text</h2>
     <label for="content">Content van gastles:</label><br />
-  <textarea id="content" name="content" rows="5" cols="50" required></textarea>
+    <div id="editor"></div>
+    <input type="hidden" name="quillContent" id="quillContent">
+  <!-- <textarea id="content" name="content" rows="5" cols="50" required></textarea> -->
     <button type="button" onclick="prevStep()">Previous</button>
     <button type="submit">Submit</button>
   </div>
