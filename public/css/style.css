@@ -242,6 +242,22 @@ main .overview article .article-bottom quote {
     font-weight: 200;
     color: #000;
 }
+.post main .metadata .Titel .image-container {
+    width: 100px;
+    height: 100px;
+    background: #f2f2f2;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.post main .metadata .Titel .image-container img {
+    width: 160px;
+    top: 20px;
+    left: 10px;
+    position: relative;
+}
 
 .post main .metadata .info-box {
     position: absolute;
@@ -309,10 +325,9 @@ main .overview article .article-bottom quote {
 }
 .post main .content {
     position: relative;
-    margin-top: 100vh;
+    margin-top: calc(100vh - 60px);
     width: 100%;
     background-color: #fff;
-    /* height: 100vh; */
 }
 .post main .content::before {
     position: absolute;
@@ -326,44 +341,31 @@ main .overview article .article-bottom quote {
 }
 .post main .content .container {
     position: relative;
-    max-width: 75ch;
+    max-width: 60vw;
     padding: 0 30px;
     margin: 50px auto;
 }
 
+.post main .content .container img {
+    width: 100%;
+}
 
+.post main .content .container p {
+    line-height: 27px;
+    font-weight: 300;
+}
 
-.scroll-downs {
-    position: absolute;
-    right: 0;
-    bottom: 30px;
-    left: 0;
-    margin: auto;
-    
-    width :34px;
-    height: 55px;
-  }
-  .mousey {
-    width: 3px;
-    padding: 10px 15px;
-    height: 35px;
-    border: 2px solid #b6b6b6;
-    border-radius: 25px;
-    opacity: 0.75;
-    box-sizing: content-box;
-  }
-  .scroller {
-    width: 3px;
-    height: 10px;
-    border-radius: 25%;
-    background-color: #b6b6b6;
-    animation: scroll 2.2s cubic-bezier(.15,.41,.69,.94) infinite;
-  }
-  @keyframes scroll {
-    0% { opacity: 0; }
-    10% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(15px); opacity: 0;}
-  }
+.post main .content .container ul {
+    list-style-type: none;
+}
+
+.post main .content .container ul:nth-child(1) {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
 
 /* ================================= 
     Footer stijling
@@ -388,7 +390,7 @@ section.top-footer {
   background-color: var(--bgAccentClrFooter);
   padding: 2rem;
   color: #fff;
-  width: 40%;
+  width: 60vw;
   margin: 0 auto;
   border-radius: var(--borderRadiusLg);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -412,8 +414,75 @@ section.top-footer h3 {
   }
 }
 
+@media screen and (max-width: 992px) {
+    .post main .metadata {
+        height: auto;
+        position: relative;
+        margin-top: 80px;
+    }
+    .post main .metadata .Titel .image-container {
+        display: flex;
+    }
+    .post main .metadata .Titel {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        transform: none;
+        top: 0px;
+        left: 0px;
+        padding: 0 20px;
+        position: relative;
+    }
+    .post main .metadata .Titel h1{
+        font-size: 2.8em,;
+    }
+    .post main .metadata .info-box img {
+        display: none;
+    }
+    .post main .metadata .info-box {
+        position: relative;
+        top: 0px;
+        left: 0;
+        transform: none;
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .post main .metadata .info-box .info-metabox::after {
+        top: 0%;
+        right: 0;
+        left: initial;
+        width: 12vw;
+        height: 160px;
+        z-index: 1;
+    }
+    .post main .metadata .info-box .info-metabox {
+        width: 90%;
+        margin: auto;
+        height: auto;
+        position: relative;
+        padding: 30px;
+        left: 0;
+    }
+    .post main .content {
+        position: relative;
+        margin-top: 60px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    
+    .post main .content .container {
+        max-width: 85vw;
+    }
   section.top-footer {
     width: 90%;
   }
+}
+
+@media screen and (max-width: 480px) {
+    .post main .content .container {
+        max-width: 100vw;
+    }
 }

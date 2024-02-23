@@ -28,6 +28,9 @@
 
       <section class="metadata">
         <article class="Titel">
+          <div class="image-container">
+          <img src="<%= post.image %>" alt="image of post" />
+        </div>
           <h1><%= post.Gastnaam %></h1>
           <p><%= post.FunctieGast %></p>
         </article>
@@ -43,12 +46,6 @@
             <li><i class='bx bx-code-curly' ></i> <%= post.Tags %></li>
           </ul>
         </article>
-
-        <div class="scroll-downs">
-          <div class="mousey">
-            <div class="scroller"></div>
-          </div>
-        </div>
       </section>
 
       <section class="content">
