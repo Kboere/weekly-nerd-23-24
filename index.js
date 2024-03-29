@@ -51,44 +51,9 @@ app.get("/", async function (req, res) {
   try {
     // Retrieve all posts from the database
     const allPosts = await posts.find().toArray();
-
-    function getClassForTag(tag) {
-        
-        // Check if tag is an array
-        if (Array.isArray(tag)) {
-            // Extract the first element of the array
-            if (tag.length > 0) {
-                tag = tag[0];
-            } else {
-                console.log("Empty tag array, default class applied.");
-                return "default-class";
-            }
-        }
-        
-        // Check if tag is defined and is a string
-        if (typeof tag === 'string') {
-            // Trim whitespace from the tag
-            tag = tag.trim();
-            console.log("Trimmed tag value:", tag);
-            
-            // Check the trimmed tag value
-            if (tag === "HTML") {
-                return "html-class";
-            } else if (tag === "CSS") {
-                return "css-class";
-            } else if (tag === "JS") {
-                return "js-class";
-            }
-        }
-        
-        // If tag is not a string or doesn't match any condition, return default class
-        return "default-class";
-    }
-    
-    
     
     // Render the index template and pass the posts data
-    res.render("pages/index", { posts: allPosts, getClassForTag });
+    res.render("pages/index", { posts: allPosts});
   } catch (err) {
     console.error("Error retrieving posts:", err);
     res.status(500).send("Internal Server Error");

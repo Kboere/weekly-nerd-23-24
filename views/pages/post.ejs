@@ -13,11 +13,10 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>Post - <%= post.Quote %></title>
   </head>
-  <body class="post">
+  <body class="post <%= post.Tags %>">
     <header>
       <a href="/"><i class='bx bx-home' ></i></a>
-      <a href="/newpost">New Post</a>
-      <a href="/posts/<%= post._id %>/edit">edit post</a>
+      <a href="/posts/<%= post._id %>/edit"><i class='bx bxs-pencil'></i></a>
     </header>
 
     <main>

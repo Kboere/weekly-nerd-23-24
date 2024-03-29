@@ -5,14 +5,14 @@
   </head>
   <body class="container">
     <header>
-      <a href="/newpost">nieuwe post maken</a>
+      <a href="/newpost"><i class='bx bxs-add-to-queue' ></i></a>
     </header>
 
     <main>
       <h1>Blog overview</h1>
       <section class="overview">
         <% posts.forEach(post => { %>
-        <article>
+        <article data-article="<%= post.Tags %>">
           <a href="/posts/<%= post._id %>">
             <div class="article-top">
               <img src="<%= post.image %>" alt="image of post" />
@@ -20,7 +20,7 @@
             </div>
 
             <div class="article-bottom">
-              <span class="<%= getClassForTag(post.Tags) %>"><%= post.Tags %></span>
+              <span class=""><%= post.Tags %></span>
               <span class="themes"><%= post.GastlesThema %></span>
               <h3><%= post.Gastnaam %></h3>
               <quote><%= post.Quote %></quote>
