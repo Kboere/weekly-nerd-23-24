@@ -45,17 +45,25 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-
 // Define routes
 app.get("/", async function (req, res) {
   try {
-    // Retrieve all posts from the database
-    const allPosts = await posts.find().toArray();
+    // Retrieve all posts from the database and sort by "GastlesNR|" key
+    const allPosts = await posts.find().sort({ "GastlesNR": 1 }).toArray();
     
-    // Render the index template and pass the posts data
+    // Render the index template and pass the sorted posts data
     res.render("pages/index", { posts: allPosts});
   } catch (err) {
     console.error("Error retrieving posts:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// defoin route for account page
+app.get("/account", async function (req, res) {
+  try {
+    res.render("pages/account");
+  } catch (err) {
     res.status(500).send("Internal Server Error");
   }
 });
@@ -66,12 +74,15 @@ app.get("/posts/:postId", async function (req, res) {
     const postId = req.params.postId;
     const post = await posts.findOne({ _id: new ObjectId(postId) });
 
+    // Retrieve only three latest posts from the database excluding the current post
+    const allPosts = await posts.find({ _id: { $ne: new ObjectId(postId) } }).limit(3).toArray();
+
     if (!post) {
       res.status(404).send("Post not found");
       return;
     }
 
-    res.render("pages/post", { post: post });
+    res.render("pages/post", { post: post, posts: allPosts });
   } catch (err) {
     console.error("Error retrieving post:", err);
     res.status(500).send("Internal Server Error");

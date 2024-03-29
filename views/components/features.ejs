@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body class="container">
-    <header>
-      <a href="/newpost"><i class='bx bxs-add-to-queue' ></i></a>
-
-      <a href="/account">mijn account</a>
-    </header>
-
-    <main>
-      <h1>Blog overview</h1>
-      <section class="overview">
-        <% posts.forEach(post => { %>
+<section class="features">
+    <div class="feat-container">
+    <% posts.forEach(post => { %>
         <article data-article="<%= post.Tags %>">
           <a href="/posts/<%= post._id %>">
             <div class="article-top">
@@ -30,10 +17,20 @@
           </a>
         </article>
         <% }); %>
-      </section>
-    </main>
+    </div>
 
-    <footer><%- include('../partials/footer'); %></footer>
-    <script src="/js/index.js"></script>
-  </body>
-</html>
+    <a class="contactButton" href="/">Alle blogs <div class="iconButton">
+        <svg
+          height="24"
+          width="24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div></a>
+</section>
