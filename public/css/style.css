@@ -8,20 +8,36 @@
   --bgClrFooter: #f7f7f7;
   --bgAccentClrFooter: #dfe3ff;
 
+  --color-css: #fcc6c6;
+  --color-js: #fffbde;
+  --color-html: #dfe3ff;
+
   --borderRadiusLg: 1rem;
 }
 
-.scroll-watcher {
-  height: 10px;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  background-color: #7079f0;
-  z-index: 999999;
-  scale: 0 1;
-  transform-origin: left;
-  animation: scroll-watcher linear;
-  animation-timeline: scroll();
+.post {
+  &.CSS .scroll-watcher {
+    background-color: var(--color-css);
+  }
+  &.JS .scroll-watcher {
+    background-color: var(--color-js);
+  }
+  &.HTML .scroll-watcher {
+    background-color: var(--color-html);
+  }
+
+  .scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #7079f0;
+    z-index: 999999;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+  }
 }
 
 @keyframes scroll-watcher {
@@ -59,6 +75,7 @@ header {
 header a {
   margin-right: 10px;
 }
+
 header a:last-child {
   margin-right: 0px;
 }
@@ -80,7 +97,7 @@ header a:first-child {
 }
 
 header a:hover:first-child {
-  background-color: #fcc6c6;
+  background-color: var(--color-css);
 }
 
 /* // buttton styling */
@@ -172,17 +189,19 @@ main {
 
       &[data-article="CSS"] {
         & .article-bottom span {
-          background-color: #fcc6c6;
+          background-color: var(--color-css);
         }
       }
+
       &[data-article="JS"] {
         & .article-bottom span {
-          background-color: #fffbde;
+          background-color: var(--color-js);
         }
       }
+
       &[data-article="HTML"] {
         & .article-bottom span {
-          background-color: #dfe3ff;
+          background-color: var(--color-html);
         }
       }
 
@@ -264,6 +283,16 @@ main {
     Post stijling
   ==================================== */
 
+.post.CSS main .metadata .info-box .info-metabox li i {
+  color: var(--color-css);
+}
+.post.HTML main .metadata .info-box .info-metabox li i {
+  color: var(--color-html);
+}
+.post.JS main .metadata .info-box .info-metabox li i {
+  color: var(--color-js);
+}
+
 .post {
   & main {
     margin: 0;
@@ -289,7 +318,7 @@ main {
         transition: all 0.3s;
 
         &:hover {
-          background-color: #fcc6c6;
+          background-color: var(--color-css);
         }
       }
     }
@@ -506,7 +535,6 @@ section.top-footer {
 
 @media screen and (max-width: 992px) {
   .post main {
-
     & .content {
       position: relative;
       margin-top: 60px;
@@ -576,6 +604,7 @@ section.top-footer {
   .post main .content .container {
     max-width: 85vw;
   }
+
   section.top-footer {
     width: 90%;
   }
