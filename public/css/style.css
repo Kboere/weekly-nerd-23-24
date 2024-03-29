@@ -11,6 +11,25 @@
   --borderRadiusLg: 1rem;
 }
 
+.scroll-watcher {
+  height: 10px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #7079f0;
+  z-index: 999999;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to{
+    scale: 1 1;
+  }
+}
+
 /* ================================= 
     Algemene stijling
   ==================================== */
@@ -21,10 +40,43 @@ body {
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999999;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 15px 10px;
+  background: linear-gradient(to bottom, #ffffff 40%, transparent 100%);
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header a{
+  margin-right: 10px;
+}
+header a:last-child{
+  margin-right: 0px;
+}
+
+header a:first-child {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #F2F2F2;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 2em;
+  margin-bottom: 0px;
+  line-height: 55px;
+  text-decoration: none;
+  transition: all 0.3s;
+  text-align: center;
+  margin-right: auto;
+}
+
+header a:hover:first-child {
+  background-color: #FCC6C6;
 }
 
 /* // buttton styling */
@@ -196,6 +248,7 @@ main .overview article .article-bottom quote {
   flex-direction: column;
   right: 2em;
   top: 50%;
+  transform: translateY(-50%);
   z-index: 999999;
 }
 .post  main .socials a {
@@ -325,7 +378,7 @@ main .overview article .article-bottom quote {
 }
 .post main .content {
     position: relative;
-    margin-top: calc(100vh - 60px);
+    margin-top: calc(100vh - 20px);
     width: 100%;
     background-color: #fff;
 }
@@ -418,7 +471,7 @@ section.top-footer h3 {
     .post main .metadata {
         height: auto;
         position: relative;
-        margin-top: 80px;
+        margin-top: 120px;
     }
     .post main .metadata .Titel .image-container {
         display: flex;

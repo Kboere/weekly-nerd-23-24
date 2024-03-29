@@ -15,12 +15,13 @@
   </head>
   <body class="post">
     <header>
+      <a href="/"><i class='bx bx-home' ></i></a>
       <a href="/newpost">New Post</a>
-      <a href="/">Back to Overview</a>
       <a href="/posts/<%= post._id %>/edit">edit post</a>
     </header>
 
     <main>
+      <div class="scroll-watcher"></div>
       <section class="socials">
         <a href="<%= post.Social %>" target="_blank"><i class='bx bxl-linkedin' ></i></a>
         <a href="mailto:<%= post.Mail %>" target="_blank"><i class='bx bxs-envelope' ></i></a>
