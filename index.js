@@ -44,15 +44,14 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-
 // Define routes
 app.get("/", async function (req, res) {
   try {
     // Retrieve all posts from the database and sort by "GastlesNR|" key
-    const allPosts = await posts.find().sort({ "GastlesNR": 1 }).toArray();
-    
+    const allPosts = await posts.find().sort({ GastlesNR: 1 }).toArray();
+
     // Render the index template and pass the sorted posts data
-    res.render("pages/index", { posts: allPosts});
+    res.render("pages/index", { posts: allPosts });
   } catch (err) {
     console.error("Error retrieving posts:", err);
     res.status(500).send("Internal Server Error");
@@ -74,15 +73,26 @@ app.get("/posts/:postId", async function (req, res) {
     const postId = req.params.postId;
     const post = await posts.findOne({ _id: new ObjectId(postId) });
 
-    // Retrieve only three latest posts from the database excluding the current post
-    const allPosts = await posts.find({ _id: { $ne: new ObjectId(postId) } }).limit(3).toArray();
+    // Count the total number of documents in the collection
+    const totalPosts = await posts.countDocuments();
+
+    // Generate a random skip value within the range of total documents
+    const randomSkip = Math.floor(Math.random() * totalPosts);
+
+    // Retrieve three random posts from the database excluding the current post
+    const randomPosts = await posts
+      .aggregate([
+        { $match: { _id: { $ne: new ObjectId(postId) } } },
+        { $sample: { size: 3 } },
+      ])
+      .toArray();
 
     if (!post) {
       res.status(404).send("Post not found");
       return;
     }
 
-    res.render("pages/post", { post: post, posts: allPosts });
+    res.render("pages/post", { post: post, posts: randomPosts });
   } catch (err) {
     console.error("Error retrieving post:", err);
     res.status(500).send("Internal Server Error");
@@ -164,9 +174,8 @@ app.get("/newpost", function (req, res) {
 // zoekresultaten page
 app.post("/posts", upload.single("image"), async (req, res) => {
   try {
-
     const quillContent = req.body.quillContent;
-  console.log("Quill content:", quillContent);
+    console.log("Quill content:", quillContent);
     // Construct a document
     const newblog = {
       image: `/uploads/${req.file.filename}`,
