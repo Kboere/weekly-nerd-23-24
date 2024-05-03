@@ -57,6 +57,14 @@ body {
   color: #000;
 }
 
+pre.ql-syntax {
+    background: #252525;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-block: 10px;
+}
+
 main:not(.post) {
   margin-top: 5rem;
 }
