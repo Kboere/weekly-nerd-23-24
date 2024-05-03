@@ -65,6 +65,15 @@ pre.ql-syntax {
     margin-block: 10px;
 }
 
+ol {
+    padding-inline: 20px;
+    margin-block: 10px;
+
+    & li{
+      font-weight: normal;
+    }
+}
+
 main:not(.post) {
   margin-top: 5rem;
 }
