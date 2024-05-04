@@ -71,7 +71,9 @@ ol, ul {
     margin-block: 10px;
 
     & li{
-      font-weight: normal;
+      font-weight: 300;
+      margin-block: 3px;
+      list-style-type: disc;
     }
 }
 
