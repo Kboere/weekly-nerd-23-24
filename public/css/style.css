@@ -63,9 +63,10 @@ pre.ql-syntax {
     padding: 10px;
     border-radius: 5px;
     margin-block: 10px;
+    overflow: scroll;
 }
 
-ol {
+ol, ul {
     padding-inline: 20px;
     margin-block: 10px;
 
