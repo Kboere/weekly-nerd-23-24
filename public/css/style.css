@@ -894,7 +894,7 @@ main {
     background: none;
     border: none;
     font-size: 40px;
-    right: 0;
+    right: 15px;
     cursor: pointer;
   }
 
@@ -1239,6 +1239,15 @@ section.top-footer {
       }
     }
   }
+
+  .account {
+    & .targets {
+        & .accordions {
+          display: flex;
+          flex-direction: column;
+        }
+    }
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -1265,4 +1274,11 @@ section.top-footer {
     }
   }
   }
+
+  .learnings {
+    height: 550px;
+    & .carousel {
+        margin-top: 120px;
+    }
+}
 }
