@@ -3,9 +3,9 @@
   <head>
     <%- include('../partials/head'); %>
   </head>
-  <body class="container">
+  <body class="container home">
     <header>
-      <a href="/newpost"><i class='bx bxs-add-to-queue' ></i></a>
+      <a class="logo" href="/"><img src="/img/logo.png" alt="logo of blog site"></a>
 
       <a href="/account">mijn account</a>
       <div class="toggle-switch">
@@ -23,7 +23,7 @@
     </header>
 
     <main>
-      <h1>Blog overview</h1>
+      <h1>WEEKLY NERD BLOGS</h1>
       <section class="overview">
         <% posts.forEach(post => { %>
         <article data-article="<%= post.Tags %>">

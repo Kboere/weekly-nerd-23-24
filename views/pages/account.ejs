@@ -6,16 +6,185 @@
   <body class="account">
     <header>
       <a href="/"><i class='bx bx-home' ></i></a>
+      <div class="toggle-switch">
+				<input aria-labelledby="toggle-label"
+				       class="toggle-checkbox"
+				       id="darkModeToggle"
+				       type="checkbox">
+				<label class="toggle-label"
+				       for="darkModeToggle"
+				       id="toggle-label"
+				       tabindex="0">
+					<span class="visually-hidden">Toggle Dark Mode</span>
+				</label>
+			</div>
     </header>
 
     <main>
-        <section class="intro">
-            <img src="/img/kevin.jpg" alt="kevin">
-            <h1>Ik ben; Front-end developer</h1>
-        </section>
+      <section class="metadata">
+        <article class="Titel">
+          <div class="image-container">
+          <img src="/uploads/kevin.png" alt="image of Kevin" />
+        </div>
+          <h1>Kevin Boere</h1>
+          <p>Frontend Developer</p>
+        </article>
+
+        <article class="info-box">
+          <img src="/uploads/kevin.png" alt="image of Kevin" />
+
+          <ul class="info-metabox">
+            <li><i class='bx bxs-time-five' ></i> 08/05/2024</li>
+            <li><i class='bx bx-world' ></i> kevinboere.nl</li>
+            <li><i class='bx bxs-magic-wand' ></i> Becoming a Frontend goeroe</li>
+            <li><i class='bx bxs-brush' ></i> About me</li>
+          </ul>
+
+        </article>
+      </section>
+
+
+      <section class="content">
+        <div class="container">
+
+          <section class="targets">
+            <h3>Persoonlijke doelen</h3>
+            <h2>Meesterproef</h2>
+            <div class="accordions">
+              <div>
+              <span>1</span>
+              <details>
+                <summary>Ik wil mijn kennis over het toegankelijk maken van projecten vergroten door me te verdiepen in de Web Content Accessibility Guidelines (WCAG), om zo te zorgen voor inclusiviteit en bruikbaarheid voor alle gebruikers.</summary>
+                <p><b>Specifiek:</b> Ik wil mijn begrip van de Web Content Accessibility Guidelines (WCAG) vergroten om projecten in de toekomst toegankelijker te maken. <b>Meetbaar:</b> Kennis over de WCAG kan ik opdoen door relevante artikelen en sites te lezen en praktische toepassingen te verkennen van andere sites die dit al implementeren (overheid etc.).<b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn vaardigheden als ontwikkelaar.<b>Realistisch:</b> Tijdens het project kan ik leren door te doen en in sommige gevallen dus te lezen. Ook kan ik in de trein naar huis artikelen lezen. <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+              </details>
+              </div>
+              <div>
+              <span>2</span>
+              <details>                
+                <summary>Ik wil leren hoe ik effectiever kan samenwerken om taakverdeling en planning bij te houden zonder te overheersen, maar toch structuur te behouden.</summary>
+                <p><b>Specifiek:</b> Ik wil mijn vaardigheden verbeteren om samen met anderen taken te verdelen en een planning te maken zonder te dominant te zijn.
+                  <b>Meetbaar:</b> Ik kan mijn voortgang evalueren door feedback te vragen van mijn teamleden en door te controleren of we de taken binnen de afgesproken deadlines succesvol afronden.
+                  <b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn ontwikkeling als teamspeler en organisator.
+                  <b>Realistisch:</b> Ik zal leren door te luisteren naar de behoeften en ideeën van mijn teamgenoten, terwijl ik toch een duidelijke structuur behoud. Ik zal proactief communiceren en openstaan voor feedback.
+                  <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+              </details>
+              </div>
+              <div>
+              <span>3</span>
+              <details>
+                <summary>Ik wil mijn vaardigheden in CSS verder ontwikkelen om indrukwekkende visuele effecten en animaties te creëren, met als doel het gebruik van JavaScript te verminderen terwijl ik toch boeiende en leuke elementen toevoeg aan mijn projecten.</summary>
+                <p><b>Specifiek:</b> Ik wil mijn kennis en vaardigheden in CSS uitbreiden om complexe animaties en visuele effecten te realiseren zonder uitgebreid gebruik van JavaScript.
+                <b>Meetbaar:</b> Ik zal mijn vooruitgang meten aan de hand van de implementatie van nieuwe CSS-functies en -technieken in mijn projecten, waardoor ik minder afhankelijk ben van JavaScript voor animaties.
+                <b>Acceptabel:</b> Dit doel sluit aan bij mijn schoolproject en zal mijn capaciteiten als front-end ontwikkelaar versterken.
+                <b>Realistisch:</b> Ik zal mijn kennis vergroten door middel van praktische oefeningen, het bestuderen van nieuwe CSS-technieken en het integreren van feedback van docenten en medestudenten.
+                <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+              </details>
+              </div>
+            </div>
+          </section>
+
+          <section class="learnings">
+            <h3>learnings van</h3>
+            <h2>Weekly Nerds</h2>
+            <button id="play-state" type="button" role="button" aria-roledescription="play or pausing the carousel"><i class='bx bx-pause-circle' ></i></button>
+            <div class='carousel'>
+              <div class='carousel__item'>
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/killian.png" alt="image of Killian" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Killian Valkhof</p>
+                  <p>Polypane, input types & "switch" in safari</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head html'>
+                  <img src="/uploads/fenna.png" alt="image of Fenna" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Fenna de Wilde</p>
+                  <p>"Aria-" & "Role-" attributen voor toegankelijkheid </p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/jeffrey.png" alt="image of Jeffrey" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Jeffrey Arts</p>
+                  <p>Eigen proces voor snelle start & toolboxes</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/Nils.png" alt="image of Nils" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Nils Binder</p>
+                  <p>Soorten units, grid methode & column techniek</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/jeremy.png" alt="image of Jeremy" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Jeremy Keith</p>
+                  <p>Niets bruikbaars nog</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head html'>
+                  <img src="/uploads/pim.png" alt="image of Pim" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Marieke & Pim</p>
+                  <p>WCAG guidelines & de tips in artikel</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/rosa.png" alt="image of Rosa" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Rosa Schuurmans</p>
+                  <p>Proberen, proberen & proberen</p>
+                </div>
+              </div>
+              <div class='carousel__item'>
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/hackathon.png" alt="image of Hackathon Logo" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p class='title'>Hackathon</p>
+                  <p>Planning, taakverdeling & communicatie</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+      </div>
     </main>
 
     <footer><%- include('../partials/footer'); %></footer>
     <script src="/js/index.js"></script>
+    <script>
+      const playButton = document.getElementById("play-state");
+      const carouselItems = document.querySelectorAll(".carousel__item");
+
+      playButton.onclick = function () {
+  carouselItems.forEach((item) => {
+    if (item.style.animationPlayState === "paused") {
+      item.style.animationPlayState = "running";
+      playButton.innerHTML = "<i class='bx bx-pause-circle'></i>";
+    } else {
+      item.style.animationPlayState = "paused";
+      playButton.innerHTML = "<i class='bx bx-play-circle'></i>";
+    }
+  });
+}
+   
+    </script>
   </body>
 </html>

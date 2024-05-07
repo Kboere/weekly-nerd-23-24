@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 let currentStep = 0;
 const form = document.getElementById("stepForm");
 const steps = form.querySelectorAll(".step");
@@ -25,3 +23,12 @@ function prevStep() {
 }
 
 showStep(currentStep);
+
+// // write a onclick for the playbutton
+// const playButton = document.getElementById("play-state");
+
+// console.log(playButton);
+
+// playButton.onclick = function () {
+//   console.log("play button clicked");
+// }
