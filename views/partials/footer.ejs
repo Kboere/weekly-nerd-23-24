@@ -19,3 +19,18 @@
       </button>
 </section>
 <p>Kevin Boere | Minor webdesign & development | 2023/2024</p>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/js/service-worker.js")
+        .then((registration) => {
+          console.log("Service Worker registered successfully:", registration);
+        })
+        .catch((error) => {
+          console.log("Service Worker registration failed:", error);
+        });
+    });
+  }
+</script>
