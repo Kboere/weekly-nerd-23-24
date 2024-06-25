@@ -238,11 +238,15 @@ header a:first-child {
   text-align: center;
   margin-right: auto;
   cursor: pointer;
+
+  &:focus-visible {
+    outline: 8px ridge rgba(220, 50, 112, 0.6);
+  }
 }
-header a.logo{
+header a.logo {
   background-color: unset;
 
-  & img{
+  & img {
     width: 100%;
   }
 }
@@ -254,48 +258,46 @@ header a:not(.logo):hover:first-child {
 /* // buttton styling */
 
 .contactButton {
-  background: #7079f0;
-  color: white;
-  font-family: inherit;
-  padding: 0.45em;
-  padding-left: 1em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
-  overflow: hidden;
-  position: relative;
-  height: 2.8em;
-  padding-right: 3em;
-}
+    appearance: button;
+    background-color:#00075f;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 12px 40px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
 
-.iconButton {
-  margin-left: 1em;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
-  right: 0.3em;
-  transition: all 0.3s;
-}
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
 
-.contactButton:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em #5566c2;
-}
+    &:active {
+      box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+      outline: 0;
+    }
 
-.contactButton:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em #5566c2;
+    &:not([disabled]):active {
+      box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+      transform: translate(2px, 2px);
+    }
 }
 
 .contactButton:focus-visible {
@@ -305,7 +307,7 @@ header a:not(.logo):hover:first-child {
 /* ================================= 
     Main stijling blog overview
   ==================================== */
-.home{
+.home {
   h1 {
     padding: 30px 60px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -325,6 +327,54 @@ main {
   justify-content: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  & .filtering {
+    & button {
+      appearance: button;
+      background-color:#00075f;
+      background-image: none;
+      border: 1px solid #000;
+      border-radius: 4px;
+      box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 0 5px 10px 0;
+      overflow: visible;
+      padding: 12px 40px;
+      text-align: center;
+      text-transform: none;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:focus-visible {
+        outline: 8px ridge rgba(220, 50, 112, 0.6);
+      }
+
+      &:active {
+        box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+        outline: 0;
+      }
+
+      &:not([disabled]):active {
+        box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+        transform: translate(2px, 2px);
+      }
+    }
+  }
 
   & .overview {
     position: relative;
@@ -354,7 +404,7 @@ main {
       overflow: hidden;
 
       &:nth-of-type(3n) {
-        margin-right: 0;
+        /* margin-right: 0; */
       }
 
       &[data-article="CSS"] {
@@ -362,12 +412,12 @@ main {
           background-color: var(--color-css);
         }
 
-        & a{
-          &:hover{
-            & .article-bottom span{
+        & a {
+          &:hover {
+            & .article-bottom span {
               animation-name: pulseColorRed;
-              animation-duration: .5s;
-              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-duration: 0.5s;
+              animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
               animation-iteration-count: 3;
             }
           }
@@ -379,12 +429,12 @@ main {
           background-color: var(--color-js);
         }
 
-        & a{
-          &:hover{
-            & .article-bottom span{
+        & a {
+          &:hover {
+            & .article-bottom span {
               animation-name: pulseColorYellow;
-              animation-duration: .5s;
-              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-duration: 0.5s;
+              animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
               animation-iteration-count: 3;
             }
           }
@@ -396,12 +446,12 @@ main {
           background-color: var(--color-html);
         }
 
-        & a{
-          &:hover{
-            & .article-bottom span{
+        & a {
+          &:hover {
+            & .article-bottom span {
               animation-name: pulseColorBlue;
-              animation-duration: .5s;
-              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-duration: 0.5s;
+              animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
               animation-iteration-count: 3;
             }
           }
@@ -414,6 +464,21 @@ main {
         transition: all 0.3s;
         cursor: pointer;
 
+        &:focus-visible {
+          & .article-top {
+            & img {
+              transform: scale(1.3);
+              object-position: top;
+              animation-name: shakey;
+              animation-duration: 1.5s;
+              animation-timing-function: linear;
+              animation-iteration-count: infinite;
+              animation-fill-mode: both;
+            }
+          }
+          
+        }
+
         &:hover {
           cursor: pointer;
           & .article-top {
@@ -421,10 +486,10 @@ main {
               transform: scale(1.3);
               object-position: top;
               animation-name: shakey;
-          animation-duration: 1.5s;
-          animation-timing-function: linear;
-          animation-iteration-count: 1;
-          animation-fill-mode: both;
+              animation-duration: 1.5s;
+              animation-timing-function: linear;
+              animation-iteration-count: 1;
+              animation-fill-mode: both;
             }
           }
         }
@@ -549,7 +614,6 @@ main {
   100% {
     transform: rotate(0deg);
   }
-  
 }
 
 /* @keyframes pulseColorRed {
@@ -825,6 +889,22 @@ main {
           & a {
             text-decoration: none;
             color: var(--fontColorBlack);
+            outline: none;
+
+            &:focus-visible {
+              & .article-top {
+                & img {
+                  transform: scale(1.3);
+                  object-position: top;
+                  animation-name: shakey;
+                  animation-duration: 1.5s;
+                  animation-timing-function: linear;
+                  animation-iteration-count: infinite;
+                  animation-fill-mode: both;
+                }
+              }
+              
+            }
           }
 
           &[data-article="CSS"] {
@@ -850,6 +930,7 @@ main {
             background: #f7f7f7;
             border-radius: var(--borderRadiusLg);
             height: 200px;
+            overflow: hidden;
 
             &::after {
               content: "";
@@ -867,9 +948,10 @@ main {
               position: absolute;
               width: 80%;
               height: 180px;
-              bottom: 0px;
+              bottom: -20px;
               object-fit: contain;
               border-radius: var(--borderRadiusLg) var(--borderRadiusLg) 0 0;
+              transform-origin: bottom center;
             }
 
             & p {
@@ -1089,7 +1171,7 @@ main {
         border-radius: 8px;
         padding: 16px 20px 16px 70px;
 
-        p{
+        p {
           color: #000;
         }
 
@@ -1271,31 +1353,31 @@ section.top-footer {
 }
 
 @media screen and (max-width: 1150px) {
-  .post main .features{
+  .post main .features {
     width: 90vw;
 
-  & .feat-container{
-    overflow-y: hidden;
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    & .feat-container {
+      overflow-y: hidden;
+      overflow-x: auto;
+      flex-wrap: nowrap;
 
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
 
-    &::before{
-      content: 'scroll to see more posts';
-      position: absolute;
-      top: -20px;
-      font-size: 14px;
-      font-weight: 100;
+      &::before {
+        content: "scroll to see more posts";
+        position: absolute;
+        top: -20px;
+        font-size: 14px;
+        font-weight: 100;
+      }
+
+      & article {
+        min-width: 300px;
+        margin-right: 30px;
+        scroll-snap-align: start;
+      }
     }
-
-    & article{
-      min-width: 300px;
-      margin-right: 30px;
-      scroll-snap-align: start;
-    }
-  }
   }
 }
 
@@ -1370,12 +1452,12 @@ section.top-footer {
 
   .account {
     & .targets {
-        & .accordions {
-          display: flex;
-          flex-direction: column;
-        }
+      & .accordions {
+        display: flex;
+        flex-direction: column;
+      }
     }
-}
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1395,18 +1477,18 @@ section.top-footer {
     max-width: 100vw;
   }
 
-  .post main .features{
-    & .feat-container{
-    & article{
-      min-width: 280px;      
+  .post main .features {
+    & .feat-container {
+      & article {
+        min-width: 280px;
+      }
     }
-  }
   }
 
   .learnings {
     height: 550px;
     & .carousel {
-        margin-top: 120px;
+      margin-top: 120px;
     }
-}
+  }
 }

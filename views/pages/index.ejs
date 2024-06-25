@@ -5,26 +5,48 @@
   </head>
   <body class="container home">
     <header>
-      <a class="logo" href="/"><img src="/img/logo.png" alt="logo of blog site"></a>
+      <a class="logo" href="/"
+        ><img src="/img/logo.png" alt="logo of blog site"
+      /></a>
 
       <a href="/account">mijn account</a>
       <div class="toggle-switch">
-				<input aria-labelledby="toggle-label"
-				       class="toggle-checkbox"
-				       id="darkModeToggle"
-				       type="checkbox">
-				<label class="toggle-label"
-				       for="darkModeToggle"
-				       id="toggle-label"
-				       tabindex="0">
-					<span class="visually-hidden">Toggle Dark Mode</span>
-				</label>
-			</div>
+        <input
+          aria-labelledby="toggle-label"
+          class="toggle-checkbox"
+          id="darkModeToggle"
+          type="checkbox"
+        />
+        <label
+          class="toggle-label"
+          for="darkModeToggle"
+          id="toggle-label"
+          tabindex="0"
+        >
+          <span class="visually-hidden">Toggle Dark Mode</span>
+        </label>
+      </div>
     </header>
 
     <main>
       <h1>WEEKLY NERD BLOGS</h1>
-      <section class="overview">
+
+      <section class="filtering">
+        <div>
+          <label for="filter">Filter op:</label>
+          <select id="filter" onchange="filterByData()">
+            <option value="all">Alle Nerds</option>
+            <option value="HTML">HTML Nerds</option>
+            <option value="CSS">CSS Nerds</option>
+            <option value="JS">JavaScript Nerds</option>
+          </select>
+        </div>
+        <div>
+          <button id="shuffleItems">Randomize de Nerds</button>
+        </div>
+      </section>
+
+      <section id="overview" class="overview">
         <% posts.forEach(post => { %>
         <article data-article="<%= post.Tags %>">
           <a href="/posts/<%= post._id %>">

@@ -47,7 +47,7 @@ const upload = multer({ storage: storage });
 // Define routes
 app.get("/", async function (req, res) {
   try {
-    // Retrieve all posts from the database and sort by "GastlesNR|" key
+    // Retrieve all posts from the database and sort by "GastlesNR" key
     const allPosts = await posts.find().sort({ GastlesNR: 1 }).toArray();
 
     // Render the index template and pass the sorted posts data
