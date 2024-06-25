@@ -237,6 +237,7 @@ header a:first-child {
   transition: all 0.3s;
   text-align: center;
   margin-right: auto;
+  cursor: pointer;
 }
 header a.logo{
   background-color: unset;
@@ -349,6 +350,8 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      cursor: pointer;
+      overflow: hidden;
 
       &:nth-of-type(3n) {
         margin-right: 0;
@@ -358,11 +361,33 @@ main {
         & .article-bottom span {
           background-color: var(--color-css);
         }
+
+        & a{
+          &:hover{
+            & .article-bottom span{
+              animation-name: pulseColorRed;
+              animation-duration: .5s;
+              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-iteration-count: 3;
+            }
+          }
+        }
       }
 
       &[data-article="JS"] {
         & .article-bottom span {
           background-color: var(--color-js);
+        }
+
+        & a{
+          &:hover{
+            & .article-bottom span{
+              animation-name: pulseColorYellow;
+              animation-duration: .5s;
+              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-iteration-count: 3;
+            }
+          }
         }
       }
 
@@ -370,11 +395,39 @@ main {
         & .article-bottom span {
           background-color: var(--color-html);
         }
+
+        & a{
+          &:hover{
+            & .article-bottom span{
+              animation-name: pulseColorBlue;
+              animation-duration: .5s;
+              animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              animation-iteration-count: 3;
+            }
+          }
+        }
       }
 
       & a {
         text-decoration: none;
         color: var(--fontColorBlack);
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          cursor: pointer;
+          & .article-top {
+            & img {
+              transform: scale(1.3);
+              object-position: top;
+              animation-name: shakey;
+          animation-duration: 1.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: 1;
+          animation-fill-mode: both;
+            }
+          }
+        }
       }
 
       & .article-top {
@@ -382,6 +435,7 @@ main {
         background: #f7f7f7;
         border-radius: var(--borderRadiusLg);
         height: 200px;
+        overflow: hidden;
 
         &::after {
           content: "";
@@ -399,9 +453,11 @@ main {
           position: absolute;
           width: 80%;
           height: 180px;
-          bottom: 0;
+          bottom: -20px;
           object-fit: contain;
           border-radius: var(--borderRadiusLg) var(--borderRadiusLg) 0 0;
+          transition: all 0.3s;
+          transform-origin: bottom center;
         }
 
         & p {
@@ -429,6 +485,8 @@ main {
           display: inline-block;
           text-transform: uppercase;
           background-color: #ededed;
+          transition: all 0.3s;
+          cursor: pointer;
         }
 
         & span.themes {
@@ -454,6 +512,75 @@ main {
     }
   }
 }
+
+/* animation with a little shake */
+
+@keyframes shakey {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  90% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+  
+}
+
+/* @keyframes pulseColorRed {
+  from {
+    background-color: var(--color-css) ;
+  }
+  to {
+    filter: brightness(185%);
+    scale: 1.1;
+  }
+}
+
+@keyframes pulseColorYellow {
+  from {
+    background-color: var(--color-js) ;
+  }
+  to {
+    filter: brightness(185%);
+    scale: 1.1;
+  }
+}
+
+@keyframes pulseColorBlue {
+  from {
+    background-color: var(--color-html) ;
+  }
+  to {
+    filter: brightness(185%);
+    scale: 1.1;
+  }
+} */
 
 /* ================================= 
     Post stijling
