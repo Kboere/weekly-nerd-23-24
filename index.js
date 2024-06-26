@@ -67,6 +67,22 @@ app.get("/account", async function (req, res) {
   }
 });
 
+app.get("/account/highlights-weekly-nerds", async function (req, res) {
+  try {
+    res.render("pages/weekly");
+  } catch (err) {
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/account/highlights-vakken", async function (req, res) {
+  try {
+    res.render("pages/vakken");
+  } catch (err) {
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // Define route for individual posts
 app.get("/posts/:postId", async function (req, res) {
   try {

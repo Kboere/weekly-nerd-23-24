@@ -2,10 +2,6 @@
 // const form = document.getElementById("stepForm");
 // const steps = form.querySelectorAll(".step");
 
-const shuffleButton = document.getElementById('shuffleItems');
-
-console.log(shuffleButton)
-
 // function showStep(stepIndex) {
 //   steps.forEach((step, index) => {
 //     if (index === stepIndex) {
@@ -28,17 +24,40 @@ console.log(shuffleButton)
 
 // showStep(currentStep);
 
+// const shuffleButton = document.getElementById('shuffleItems');
+
+// console.log(shuffleButton)
+
+// Store the initial state of articles in localStorage
+const items = document.querySelectorAll('#overview article');
+const itemsArray = Array.from(items);
+localStorage.setItem('items', JSON.stringify(itemsArray.map(item => ({
+    outerHTML: item.outerHTML,
+    dataArticle: item.getAttribute('data-article')
+}))));
+
+// Retrieve data from localStorage
+const data = JSON.parse(localStorage.getItem('items'));
 
 function filterByData() {
-  const category = document.getElementById('filter').value;
-  const items = document.querySelectorAll('#overview article');
-  items.forEach(item => {
-      if (category === 'all' || item.getAttribute('data-article') === category) {
-          item.style.display = 'list-item';
-      } else {
-          item.style.display = 'none';
-      }
-  });
+    const category = document.getElementById('filter').value;
+    const overview = document.getElementById('overview');
+
+    // Clear the existing articles
+    overview.innerHTML = '';
+
+    // Determine which items to display
+    if (category === 'all') {
+        // Show all items
+        data.forEach(itemData => {
+            overview.innerHTML += itemData.outerHTML;
+        });
+    } else {
+        // Show only the items that match the selected category
+        data.filter(itemData => itemData.dataArticle === category).forEach(itemData => {
+            overview.innerHTML += itemData.outerHTML;
+        });
+    }
 }
 
 function shuffleItems() {
@@ -49,6 +68,18 @@ function shuffleItems() {
   shuffledItems.forEach(item => list.appendChild(item));
 }
 
+function resetItems() {
+  const overview = document.getElementById('overview');
+  overview.innerHTML = '';
+  data.forEach(itemData => {
+      overview.innerHTML += itemData.outerHTML;
+  });
+
+  // Reset the categorie filter to 'all'
+  document.getElementById('filter').value = 'all';
+}
+
+document.getElementById('resetItems').addEventListener('click', resetItems);
 document.getElementById('shuffleItems').addEventListener('click', shuffleItems);
 
 // // write a onclick for the playbutton

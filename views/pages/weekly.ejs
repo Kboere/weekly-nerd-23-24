@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="account high">
+    <header>
+      <a href="/" aria-label="Home">
+        <i class='bx bx-home' aria-hidden="true"></i>
+      </a>
+      <a href="/account" aria-label="My Account">Mijn account</a>
+      <div class="toggle-switch">
+        <input
+          aria-labelledby="toggle-label"
+          class="toggle-checkbox"
+          id="darkModeToggle"
+          type="checkbox"
+        />
+        <label
+          class="toggle-label"
+          for="darkModeToggle"
+          id="toggle-label"
+        >
+          <span class="visually-hidden">Toggle Dark Mode</span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+        <section class="metadata">
+            <aside class="highlights">
+              <a href="#"><i class='bx bx-highlight'></i></a>
+              <a href="/account/highlights-vakken"><i class='bx bx-highlight'></i></a>
+            </aside>
+          </section>
+
+      <section class="content">
+        <div class="container">
+          <section class="learnings" aria-labelledby="learnings-heading">
+            <h3 id="learnings-heading">Highlights van</h3>
+            <h2>Weekly Nerds</h2>
+            <button id="play-state" type="button" role="button" aria-pressed="false" aria-controls="carousel" aria-label="Play or pause the carousel">
+              <i class='bx bx-pause-circle' aria-hidden="true"></i>
+            </button>
+            <div class='carousel' id="carousel" aria-live="polite">
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-1">
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/killian.png" alt="Portrait of Killian Valkhof" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-1" class='title'>Killian Valkhof</p>
+                  <p>Polypane, input types & "switch" in safari</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-2">
+                <div class='carousel__item-head html'>
+                  <img src="/uploads/fenna.png" alt="Portrait of Fenna de Wilde" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-2" class='title'>Fenna de Wilde</p>
+                  <p>"Aria-" & "Role-" attributen voor toegankelijkheid</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-3">
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/jeffrey.png" alt="Portrait of Jeffrey Arts" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-3" class='title'>Jeffrey Arts</p>
+                  <p>Eigen proces voor snelle start & toolboxes</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-4">
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/Nils.png" alt="Portrait of Nils Binder" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-4" class='title'>Nils Binder</p>
+                  <p>Soorten units, grid methode & column techniek</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-5">
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/jeremy.png" alt="Portrait of Jeremy Keith" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-5" class='title'>Jeremy Keith</p>
+                  <p>Niets bruikbaars nog</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-6">
+                <div class='carousel__item-head html'>
+                  <img src="/uploads/pim.png" alt="Portrait of Marieke & Pim" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-6" class='title'>Marieke & Pim</p>
+                  <p>WCAG guidelines & de tips in artikel</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-7">
+                <div class='carousel__item-head js'>
+                  <img src="/uploads/rosa.png" alt="Portrait of Rosa Schuurmans" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-7" class='title'>Rosa Schuurmans</p>
+                  <p>Proberen, proberen & proberen</p>
+                </div>
+              </div>
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-8">
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/hackathon.png" alt="Logo of Hackathon" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-8" class='title'>Hackathon</p>
+                  <p>Planning, taakverdeling & communicatie</p>
+                </div>
+              </div>
+
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-9">
+                <div class='carousel__item-head'>
+                  <img src="/uploads/Roberto.png" alt="Logo of Hackathon" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-9" class='title'>Robert Spier</p>
+                  <p>Praten over geld & wat belangrijk is voor jou</p>
+                </div>
+              </div>
+
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-10">
+                <div class='carousel__item-head html'>
+                  <img src="/uploads/Johan.png" alt="Logo of Hackathon" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-10" class='title'>Q42</p>
+                  <p>Toegankelijkheid, Spelen met CSS</p>
+                </div>
+              </div>
+
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-11">
+                <div class='carousel__item-head'>
+                  <img src="/uploads/Marit.png" alt="Logo of Hackathon" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-11" class='title'>De Waag</p>
+                  <p>Normen en waarden in een website  </p>
+                </div>
+              </div>
+
+              <div class='carousel__item' role="group" aria-labelledby="carousel-item-12">
+                <div class='carousel__item-head css'>
+                  <img src="/uploads/Bramus.png" alt="Logo of Hackathon" />
+                </div>
+                <div class='carousel__item-body'>
+                  <p id="carousel-item-12" class='title'>PRÉ CSS DAY</p>
+                  <p>SPA view transitions & MPA (toekomst)</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <script src="/js/index.js"></script>
+    <script>
+      const playButton = document.getElementById("play-state");
+      const carouselItems = document.querySelectorAll(".carousel__item");
+
+      playButton.addEventListener("click", function () {
+        const isPaused = playButton.getAttribute("aria-pressed") === "true";
+        carouselItems.forEach((item) => {
+          item.style.animationPlayState = isPaused ? "running" : "paused";
+        });
+        playButton.setAttribute("aria-pressed", isPaused ? "false" : "true");
+        playButton.innerHTML = `<i class='bx ${isPaused ? 'bx-pause-circle' : 'bx-play-circle'}' aria-hidden="true"></i>`;
+      });
+    </script>
+  </body>
+</html>

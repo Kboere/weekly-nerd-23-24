@@ -5,186 +5,131 @@
   </head>
   <body class="account">
     <header>
-      <a href="/"><i class='bx bx-home' ></i></a>
+      <a href="/" aria-label="Home">
+        <i class='bx bx-home' aria-hidden="true"></i>
+      </a>
       <div class="toggle-switch">
-				<input aria-labelledby="toggle-label"
-				       class="toggle-checkbox"
-				       id="darkModeToggle"
-				       type="checkbox">
-				<label class="toggle-label"
-				       for="darkModeToggle"
-				       id="toggle-label"
-				       tabindex="0">
-					<span class="visually-hidden">Toggle Dark Mode</span>
-				</label>
-			</div>
+        <input
+          aria-labelledby="toggle-label"
+          class="toggle-checkbox"
+          id="darkModeToggle"
+          type="checkbox"
+        />
+        <label
+          class="toggle-label"
+          for="darkModeToggle"
+          id="toggle-label"
+        >
+          <span class="visually-hidden">Toggle Dark Mode</span>
+        </label>
+      </div>
     </header>
 
     <main>
       <section class="metadata">
-        <article class="Titel">
+        <article class="Titel" aria-labelledby="person-name">
           <div class="image-container">
-          <img src="/uploads/kevin.png" alt="image of Kevin" />
-        </div>
-          <h1>Kevin Boere</h1>
+            <img src="/uploads/kevin.png" alt="Portrait of Kevin Boere" />
+          </div>
+          <h1 id="person-name">Kevin Boere</h1>
           <p>Frontend Developer</p>
         </article>
 
-        <article class="info-box">
-          <img src="/uploads/kevin.png" alt="image of Kevin" />
+        <article class="info-box" aria-labelledby="person-info">
+          <img src="/uploads/kevin.png" alt="Portrait of Kevin Boere" />
 
-          <ul class="info-metabox">
-            <li><i class='bx bxs-time-five' ></i> 08/05/2024</li>
-            <li><i class='bx bx-world' ></i> kevinboere.nl</li>
-            <li><i class='bx bxs-magic-wand' ></i> Becoming a Frontend goeroe</li>
-            <li><i class='bx bxs-brush' ></i> About me</li>
+          <ul class="info-metabox" aria-describedby="person-info">
+            <li><i class='bx bxs-time-five' aria-hidden="true"></i> 27/06/2024</li>
+            <li><i class='bx bx-world' aria-hidden="true"></i> kevinboere.nl</li>
+            <li><i class='bx bxs-magic-wand' aria-hidden="true"></i> Een frontend goeroe worden</li>
+            <li><i class='bx bxs-brush' aria-hidden="true"></i> Over mij</li>
           </ul>
-
         </article>
-      </section>
 
+        <aside class="highlights">
+          <a href="/account/highlights-weekly-nerds"><i class='bx bx-highlight'></i></a>
+          <a href="/account/highlights-vakken"><i class='bx bx-highlight'></i></a>
+        </aside>
+      </section>
 
       <section class="content">
         <div class="container">
-
-          <section class="targets">
-            <h3>Persoonlijke doelen</h3>
+          <section class="targets" aria-labelledby="personal-goals">
+            <h3 id="personal-goals">Persoonlijke doelen</h3>
             <h2>Meesterproef</h2>
             <div class="accordions">
               <div>
-              <span>1</span>
-              <details>
-                <summary>Ik wil mijn kennis over het toegankelijk maken van projecten vergroten door me te verdiepen in de Web Content Accessibility Guidelines (WCAG), om zo te zorgen voor inclusiviteit en bruikbaarheid voor alle gebruikers.</summary>
-                <p><b>Specifiek:</b> Ik wil mijn begrip van de Web Content Accessibility Guidelines (WCAG) vergroten om projecten in de toekomst toegankelijker te maken. <b>Meetbaar:</b> Kennis over de WCAG kan ik opdoen door relevante artikelen en sites te lezen en praktische toepassingen te verkennen van andere sites die dit al implementeren (overheid etc.).<b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn vaardigheden als ontwikkelaar.<b>Realistisch:</b> Tijdens het project kan ik leren door te doen en in sommige gevallen dus te lezen. Ook kan ik in de trein naar huis artikelen lezen. <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
-              </details>
+                <span>1</span>
+                <details>
+                  <summary>Ik wil mijn kennis over het toegankelijk maken van projecten vergroten door me te verdiepen in de Web Content Accessibility Guidelines (WCAG), om zo te zorgen voor inclusiviteit en bruikbaarheid voor alle gebruikers.</summary>
+                  <p><b>Specifiek:</b> Ik wil mijn begrip van de Web Content Accessibility Guidelines (WCAG) vergroten om projecten in de toekomst toegankelijker te maken. <b>Meetbaar:</b> Kennis over de WCAG kan ik opdoen door relevante artikelen en sites te lezen en praktische toepassingen te verkennen van andere sites die dit al implementeren (overheid etc.).<b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn vaardigheden als ontwikkelaar.<b>Realistisch:</b> Tijdens het project kan ik leren door te doen en in sommige gevallen dus te lezen. Ook kan ik in de trein naar huis artikelen lezen. <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+                </details>
               </div>
               <div>
-              <span>2</span>
-              <details>                
-                <summary>Ik wil leren hoe ik effectiever kan samenwerken om taakverdeling en planning bij te houden zonder te overheersen, maar toch structuur te behouden.</summary>
-                <p><b>Specifiek:</b> Ik wil mijn vaardigheden verbeteren om samen met anderen taken te verdelen en een planning te maken zonder te dominant te zijn.
-                  <b>Meetbaar:</b> Ik kan mijn voortgang evalueren door feedback te vragen van mijn teamleden en door te controleren of we de taken binnen de afgesproken deadlines succesvol afronden.
-                  <b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn ontwikkeling als teamspeler en organisator.
-                  <b>Realistisch:</b> Ik zal leren door te luisteren naar de behoeften en ideeën van mijn teamgenoten, terwijl ik toch een duidelijke structuur behoud. Ik zal proactief communiceren en openstaan voor feedback.
-                  <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
-              </details>
+                <span>2</span>
+                <details>
+                  <summary>Ik wil leren hoe ik effectiever kan samenwerken om taakverdeling en planning bij te houden zonder te overheersen, maar toch structuur te behouden.</summary>
+                  <p><b>Specifiek:</b> Ik wil mijn vaardigheden verbeteren om samen met anderen taken te verdelen en een planning te maken zonder te dominant te zijn. <b>Meetbaar:</b> Ik kan mijn voortgang evalueren door feedback te vragen van mijn teamleden en door te controleren of we de taken binnen de afgesproken deadlines succesvol afronden. <b>Acceptabel:</b> Dit doel is relevant voor mijn schoolproject en zal bijdragen aan mijn ontwikkeling als teamspeler en organisator. <b>Realistisch:</b> Ik zal leren door te luisteren naar de behoeften en ideeën van mijn teamgenoten, terwijl ik toch een duidelijke structuur behoud. Ik zal proactief communiceren en openstaan voor feedback. <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+                </details>
               </div>
               <div>
-              <span>3</span>
-              <details>
-                <summary>Ik wil mijn vaardigheden in CSS verder ontwikkelen om indrukwekkende visuele effecten en animaties te creëren, met als doel het gebruik van JavaScript te verminderen terwijl ik toch boeiende en leuke elementen toevoeg aan mijn projecten.</summary>
-                <p><b>Specifiek:</b> Ik wil mijn kennis en vaardigheden in CSS uitbreiden om complexe animaties en visuele effecten te realiseren zonder uitgebreid gebruik van JavaScript.
-                <b>Meetbaar:</b> Ik zal mijn vooruitgang meten aan de hand van de implementatie van nieuwe CSS-functies en -technieken in mijn projecten, waardoor ik minder afhankelijk ben van JavaScript voor animaties.
-                <b>Acceptabel:</b> Dit doel sluit aan bij mijn schoolproject en zal mijn capaciteiten als front-end ontwikkelaar versterken.
-                <b>Realistisch:</b> Ik zal mijn kennis vergroten door middel van praktische oefeningen, het bestuderen van nieuwe CSS-technieken en het integreren van feedback van docenten en medestudenten.
-                <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
-              </details>
+                <span>3</span>
+                <details>
+                  <summary>Ik wil mijn vaardigheden in CSS verder ontwikkelen om indrukwekkende visuele effecten en animaties te creëren, met als doel het gebruik van JavaScript te verminderen terwijl ik toch boeiende en leuke elementen toevoeg aan mijn projecten.</summary>
+                  <p><b>Specifiek:</b> Ik wil mijn kennis en vaardigheden in CSS uitbreiden om complexe animaties en visuele effecten te realiseren zonder uitgebreid gebruik van JavaScript. <b>Meetbaar:</b> Ik zal mijn vooruitgang meten aan de hand van de implementatie van nieuwe CSS-functies en -technieken in mijn projecten, waardoor ik minder afhankelijk ben van JavaScript voor animaties. <b>Acceptabel:</b> Dit doel sluit aan bij mijn schoolproject en zal mijn capaciteiten als front-end ontwikkelaar versterken. <b>Realistisch:</b> Ik zal mijn kennis vergroten door middel van praktische oefeningen, het bestuderen van nieuwe CSS-technieken en het integreren van feedback van docenten en medestudenten. <b>Tijdgebonden:</b> Gedurende de gehele meesterproef tot aan de oplevering.</p>
+                </details>
               </div>
             </div>
           </section>
 
-          <section class="learnings">
-            <h3>learnings van</h3>
-            <h2>Weekly Nerds</h2>
-            <button id="play-state" type="button" role="button" aria-roledescription="play or pausing the carousel"><i class='bx bx-pause-circle' ></i></button>
-            <div class='carousel'>
-              <div class='carousel__item'>
-                <div class='carousel__item-head css'>
-                  <img src="/uploads/killian.png" alt="image of Killian" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Killian Valkhof</p>
-                  <p>Polypane, input types & "switch" in safari</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head html'>
-                  <img src="/uploads/fenna.png" alt="image of Fenna" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Fenna de Wilde</p>
-                  <p>"Aria-" & "Role-" attributen voor toegankelijkheid </p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head js'>
-                  <img src="/uploads/jeffrey.png" alt="image of Jeffrey" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Jeffrey Arts</p>
-                  <p>Eigen proces voor snelle start & toolboxes</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head css'>
-                  <img src="/uploads/Nils.png" alt="image of Nils" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Nils Binder</p>
-                  <p>Soorten units, grid methode & column techniek</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head js'>
-                  <img src="/uploads/jeremy.png" alt="image of Jeremy" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Jeremy Keith</p>
-                  <p>Niets bruikbaars nog</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head html'>
-                  <img src="/uploads/pim.png" alt="image of Pim" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Marieke & Pim</p>
-                  <p>WCAG guidelines & de tips in artikel</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head js'>
-                  <img src="/uploads/rosa.png" alt="image of Rosa" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Rosa Schuurmans</p>
-                  <p>Proberen, proberen & proberen</p>
-                </div>
-              </div>
-              <div class='carousel__item'>
-                <div class='carousel__item-head css'>
-                  <img src="/uploads/hackathon.png" alt="image of Hackathon Logo" />
-                </div>
-                <div class='carousel__item-body'>
-                  <p class='title'>Hackathon</p>
-                  <p>Planning, taakverdeling & communicatie</p>
-                </div>
-              </div>
+          <section class="targets reflect" aria-labelledby="reflection-of-minor">
+            <h3 id="reflection-of-minor">Minor web design & development</h3>
+            <h2>Reflectie</h2>
+            <div class="reflect-text">
+              <p>Over wat kan je reflecteren als je een Minor kon volgen waarbij je alleen maar <b>"vette shit"</b> mag bouwen? Over van alles natuurlijk! Ik heb deze Minor met mega veel plezier kunnen volgen. Hoewel ik de drukwerk vrij hoog vond, is dat juist het gene wat iemand aan kan zetten om hele gave dingen te doen. En ik ben er van overtuigd dat dat ook bij mij het geval is geweest.</p>
+              <h4>Leermomenten</h4>
+              <p>Tijdens de Minor zijn er zoveel elementen aan de aandacht gekomen waarvan ik iet wist dat, dat kon of bestond. Zo zijn de belangrijhkste onderwerpen die ik vanuit deze Minor meeneem toch wel:</p>
+              <ul>
+                <li>1. Toegankelijkheid mag niet meer zeldzaam zijn</li>
+                <li>2. CSS over JS (als het kan)</li>
+                <li>3. Cross-browser checks doen</li>
+              </ul>
+              <p>Dit is voor mij eigenlijk in een aantal hoofdlijnen waar de Minor over ging. Dat neemt niet weg dat ik gaande weg door de Minor heen tegen een hoop "vervelende" opstakels kwam. Niet alleen op code vlak maar ook persoonlijk. Ik ben zelf iemand die altijd eerst zelf gaat ontdekken totdat het bijna te laat is. Vaak lukt het mij ook wel om iets op orde te krijgen maar wanneer het echt niet luk trek ik te laat aan de bel. Dat is iets wat ik tijdens deze Minor toch wel heb veranderd. Zeker met vakken zoals <b>CSS to the rescue</b> & <b>Browser Technologies</b>. Bij Deze vakken moesten we nieuwe technolgieën gebruiken die ik nog niet kenden of had gebruikt, gelukkig weet ik dat docenten hier wel verstand van hebben en ik die kan raadplegen.</p>
+              <p>Leermomenten zoals: "ervan uit kunnen gaan dat groepsgenoten hun werk doen" & "Een stapje terug nemen mag ook" zijn waardevolle momenten die ik tijdens deze Minor meerdere keren heb ondervonden. Ik wil vaak dingen naar mij toe trekken omdat ik het belangrijk vind om overal op de hoogte van te zijn zodat ik niet voor verassingen sta. Maar dat is ook gelijk een valkuil. Een mooi voorbeeld hiervan is tijdens de <b>Meesterproef</b> waarbij ieder zijn eigen taken had. Tijdens het mergen van een eigen branche naar de "main" kan er altijd wel iets fout gaan. Ik kijk dan bijvoorbeeld naar CSS of HTML dat er gechreven is en als ik zie dat er iets niet helemaal uit ziet zoals ik dat zou doen, maak ik er gelijk mijn taak van om het te verbeteren. Maar dat moet ik eigenlijk niet meer doen, de andere persoon leert er dan niet van wat ik zou aanpassen en ik leg mijzelf meer taken op die een ander makkelijk ook had kunnen doen.</p>
+              <h4>Wat viel mee? Trots op?</h4>
+              <p>Alles aan deze Minor was eigenlijk wel goed geregeld. Sommige vakken zijn in het begin niet wat je denk dat het is, maar door de periode heen kom je er dan achter dat het eigenlijk stiekm heel leuk is  of zelfs uitdagend! Zo dacht ik bij vakken als <b>HCD</b> of <b>Browser Technologies</b> Dat dit vakken zijn die een beetje als opvulling voelen (ook omdat het andere vak in die periode dan bijvoorbeeld leuker is om aan te werken), maar achteraf bleek hier zoveel meer waarde aan te zitten dan dat ik dacht. Zo dacht ik bij HCD het wel even snel te "fixen" maar integendeel werd bewezen. Tijdens dat vak maak je specifiek een website voor iemand. En omdat het specifiek is zitten daar uitdagingen die je normaal niet zou hebben wat het wel heel leuk en leerzaam maakt. </p>
+              <p>Ook ben ik erg blij met het feit dat ondanks ik 2 weken er uitlag vanwege een gebroken sleutelbeen, ik heb door kunnen zetten met de vakken die ik in die periode had en hierdoor vrijwel geen achterstand met mijn studie heb opgelopen.</p>
+              <p>Trots ben ik ik stiekem toch wel op alles wat ik heb gemaakt, maar als ik dan mijn top 3 moet benoemen is deze als volgens:</p>
+              <ul>
+                <li><a href="">1. CSS to the rescue</a></li>
+                <li><a href="">2. Meesterproef</a></li>
+                <li><a href="">3. Hackathon</a></li>
+              </ul>
+              <p> In mijn Top 3 zit eigenlijk een soort gelijkenissen. Bij elk vak konden we namelijk al onze creativiteit stoppen in wat we leuk vonden en ook nog een in groepsverband. Ik denk ook dat dit de beste projecten zijn die ik tot nu toe in mijn loopbaan heb kunnen maken omdat dit geen standaard websites zijn. En daar ben ik erg trots op!</p>
+              <h4>Kortom</h4>
+              <p>De minor Web Design & Development heeft mij geholpen om mijn vaardigheden als front-end developer te verbeteren en mijn kennis van webtechnologieën te verdiepen. Ik heb geleerd hoe ik websites kan ontwerpen en ontwikkelen die voldoen aan de behoeften van gebruikers en die toegankelijk en gebruiksvriendelijk zijn. Ik heb ook geleerd hoe ik effectief kan samenwerken met anderen om projecten te plannen en uit te voeren. Ik ben trots op wat ik heb bereikt en ik kijk ernaar uit om mijn nieuwe vaardigheden toe te passen in mijn toekomstige projecten.</p>
             </div>
           </section>
-
-
-      </div>
+        </div>
+      </section>
     </main>
 
-    <footer><%- include('../partials/footer'); %></footer>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
     <script src="/js/index.js"></script>
     <script>
       const playButton = document.getElementById("play-state");
       const carouselItems = document.querySelectorAll(".carousel__item");
 
-      playButton.onclick = function () {
-  carouselItems.forEach((item) => {
-    if (item.style.animationPlayState === "paused") {
-      item.style.animationPlayState = "running";
-      playButton.innerHTML = "<i class='bx bx-pause-circle'></i>";
-    } else {
-      item.style.animationPlayState = "paused";
-      playButton.innerHTML = "<i class='bx bx-play-circle'></i>";
-    }
-  });
-}
-   
+      playButton.addEventListener("click", function () {
+        const isPaused = playButton.getAttribute("aria-pressed") === "true";
+        carouselItems.forEach((item) => {
+          item.style.animationPlayState = isPaused ? "running" : "paused";
+        });
+        playButton.setAttribute("aria-pressed", isPaused ? "false" : "true");
+        playButton.innerHTML = `<i class='bx ${isPaused ? 'bx-pause-circle' : 'bx-play-circle'}' aria-hidden="true"></i>`;
+      });
     </script>
   </body>
 </html>

@@ -5,11 +5,11 @@
   </head>
   <body class="container home">
     <header>
-      <a class="logo" href="/"
-        ><img src="/img/logo.png" alt="logo of blog site"
-      /></a>
+      <a class="logo" href="/" aria-label="Home">
+        <img src="/img/logo.png" alt="Logo of blog site" />
+      </a>
 
-      <a href="/account">mijn account</a>
+      <a href="/account" aria-label="My Account">Mijn account</a>
       <div class="toggle-switch">
         <input
           aria-labelledby="toggle-label"
@@ -21,7 +21,6 @@
           class="toggle-label"
           for="darkModeToggle"
           id="toggle-label"
-          tabindex="0"
         >
           <span class="visually-hidden">Toggle Dark Mode</span>
         </label>
@@ -31,43 +30,49 @@
     <main>
       <h1>WEEKLY NERD BLOGS</h1>
 
-      <section class="filtering">
-        <div>
-          <label for="filter">Filter op:</label>
-          <select id="filter" onchange="filterByData()">
-            <option value="all">Alle Nerds</option>
-            <option value="HTML">HTML Nerds</option>
-            <option value="CSS">CSS Nerds</option>
-            <option value="JS">JavaScript Nerds</option>
-          </select>
-        </div>
-        <div>
-          <button id="shuffleItems">Randomize de Nerds</button>
-        </div>
-      </section>
+      <section class="nerds">
+        <section class="filtering" aria-labelledby="filter-heading">
+          <h2 id="filter-heading">Filteren:</h2>
+          <div>
+            <label for="filter">Categorie:</label>
+            <select id="filter" aria-controls="overview" onchange="filterByData()">
+              <option value="all">Alle Nerds</option>
+              <option value="HTML">HTML Nerds</option>
+              <option value="CSS">CSS Nerds</option>
+              <option value="JS">JavaScript Nerds</option>
+            </select>
+          </div>
+          <div>
+            <button id="shuffleItems" aria-controls="overview">Randomize de Nerds</button>
+            <button id="resetItems" aria-controls="overview">Reset</button>
+          </div>
+        </section>
 
-      <section id="overview" class="overview">
-        <% posts.forEach(post => { %>
-        <article data-article="<%= post.Tags %>">
-          <a href="/posts/<%= post._id %>">
-            <div class="article-top">
-              <img src="<%= post.image %>" alt="image of post" />
-              <p><%= post.GastlesNR %></p>
-            </div>
+        <section id="overview" class="overview" aria-live="polite">
+          <% posts.forEach(post => { %>
+          <article data-article="<%= post.Tags %>" aria-labelledby="article-title-<%= post._id %>">
+            <a href="/posts/<%= post._id %>">
+              <div class="article-top">
+                <img src="<%= post.image %>" alt="Image of <%= post.Gastnaam %>'s post" />
+                <p><%= post.GastlesNR %></p>
+              </div>
 
-            <div class="article-bottom">
-              <span class=""><%= post.Tags %></span>
-              <span class="themes"><%= post.GastlesThema %></span>
-              <h3><%= post.Gastnaam %></h3>
-              <quote><%= post.Quote %></quote>
-            </div>
-          </a>
-        </article>
-        <% }); %>
+              <div class="article-bottom">
+                <span class=""><%= post.Tags %></span>
+                <span class="themes"><%= post.GastlesThema %></span>
+                <h3 id="article-title-<%= post._id %>"><%= post.Gastnaam %></h3>
+                <blockquote><%= post.Quote %></blockquote>
+              </div>
+            </a>
+          </article>
+          <% }); %>
+        </section>
       </section>
     </main>
 
-    <footer><%- include('../partials/footer'); %></footer>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
     <script src="/js/index.js"></script>
   </body>
 </html>

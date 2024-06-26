@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+  </head>
+  <body class="account high vak">
+    <header>
+      <a href="/" aria-label="Home">
+        <i class='bx bx-home' aria-hidden="true"></i>
+      </a>
+      <a href="/account" aria-label="My Account">Mijn account</a>
+      <div class="toggle-switch">
+        <input
+          aria-labelledby="toggle-label"
+          class="toggle-checkbox"
+          id="darkModeToggle"
+          type="checkbox"
+        />
+        <label
+          class="toggle-label"
+          for="darkModeToggle"
+          id="toggle-label"
+        >
+          <span class="visually-hidden">Toggle Dark Mode</span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+        <section class="metadata">
+            <aside class="highlights">
+              <a href="/account/highlights-weekly-nerds"><i class='bx bx-highlight'></i></a>
+              <a href="#"><i class='bx bx-highlight'></i></a>
+            </aside>
+          </section>
+
+      <section class="content">
+        <div class="container">
+          <section class="vakken" aria-labelledby="vakken-heading">
+            <h3 id="vakken-heading">Highlights van</h3>
+            <h2>Vakken</h2>
+          </section>
+          <section class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      <img src="/uploads/Marit.png" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                      <div class="blog-slider__title">Web App From Scratch</div>
+                      <div class="blog-slider__text"><p>Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. In de foto's kun je de eindresultaten zien.</p> <p>Als ik nu terug kijk zie ik vooral chaos en veel probeer dingetjes maar dat maakt het ook wel weer leuk omdat ik dngen mocht ontdekken tijdens deze 2 weken. Best een leuk concept als groep bedacht alleen is de uitwerking wat matig.</p></div>
+                      <a href="https://github.com/Kboere/web-app-from-scratch-2324" class="blog-slider__button">Bekijk project</a>
+                    </div>
+                  </div>
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                      <div class="blog-slider__title">Hoogtepunten</div>
+                      <div class="blog-slider__text">
+                        <ul>
+                            <li>In de pageheader een soort van 3D ervaring gemaakt</li>
+                            <li>Leren hoe scroll animations werken met CSS</li>
+                            <li>Ophalen van random images vanuit een API</li>
+                            <li>In groepsverband een leuk concept neerzetten</li>
+                            <li>Leuk begin van de minor</li>
+                        </ul>
+                      </div>
+                      <a href="https://github.com/Kboere/web-app-from-scratch-2324" class="blog-slider__button">Bekijk project</a>
+                    </div>
+                  </div>
+                  <div class="blog-slider__pagination"></div>
+                </div>         
+          </section>
+
+          <section class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/uploads/Marit.png" alt="">
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Web App From Scratch</div>
+                  <div class="blog-slider__text"><p>Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. In de foto's kun je de eindresultaten zien.</p> <p>Als ik nu terug kijk zie ik vooral chaos en veel probeer dingetjes maar dat maakt het ook wel weer leuk omdat ik dngen mocht ontdekken tijdens deze 2 weken. Best een leuk concept als groep bedacht alleen is de uitwerking wat matig.</p></div>
+                  <a href="#" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                        <li>listietm1</li>
+                        <li>listietm1</li>
+                        <li>listietm1</li>
+                        <li>listietm1</li>
+                        <li>listietm1</li>
+                    </ul>
+                  </div>
+                  <a href="#" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__pagination right"></div>
+            </div>         
+      </section>
+
+      <section class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="/uploads/Marit.png" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">Web App From Scratch</div>
+              <div class="blog-slider__text">Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. in de foto's kun je de eindresultaten zien.</div>
+              <a href="#" class="blog-slider__button">Bekijk project</a>
+            </div>
+          </div>
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">Hoogtepunten</div>
+              <div class="blog-slider__text">
+                <ul>
+                    <li>listietm1</li>
+                    <li>listietm1</li>
+                    <li>listietm1</li>
+                    <li>listietm1</li>
+                    <li>listietm1</li>
+                </ul>
+              </div>
+              <a href="#" class="blog-slider__button">Bekijk project</a>
+            </div>
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>         
+  </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script>
+      // Select all elements with the class .blog-slider
+document.querySelectorAll('.blog-slider').forEach((slider) => {
+  new Swiper(slider, {
+    spaceBetween: 30,
+    effect: 'fade',
+    loop: true,
+    mousewheel: {
+      invert: false,
+    },
+    // autoHeight: true, // Uncomment if you need autoHeight
+    pagination: {
+      el: slider.querySelector('.blog-slider__pagination'),
+      clickable: true,
+    }
+  });
+});
+    </script>
+  </body>
+</html>
