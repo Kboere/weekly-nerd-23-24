@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"
+    />
   </head>
   <body class="account high vak">
     <header>
       <a href="/" aria-label="Home">
-        <i class='bx bx-home' aria-hidden="true"></i>
+        <i class="bx bx-home" aria-hidden="true"></i>
       </a>
       <a href="/account" aria-label="My Account">Mijn account</a>
       <div class="toggle-switch">
@@ -17,23 +20,21 @@
           id="darkModeToggle"
           type="checkbox"
         />
-        <label
-          class="toggle-label"
-          for="darkModeToggle"
-          id="toggle-label"
-        >
+        <label class="toggle-label" for="darkModeToggle" id="toggle-label">
           <span class="visually-hidden">Toggle Dark Mode</span>
         </label>
       </div>
     </header>
 
     <main>
-        <section class="metadata">
-            <aside class="highlights">
-              <a href="/account/highlights-weekly-nerds"><i class='bx bx-highlight'></i></a>
-              <a href="#"><i class='bx bx-highlight'></i></a>
-            </aside>
-          </section>
+      <section class="metadata">
+        <aside class="highlights">
+          <a href="/account/highlights-weekly-nerds"
+            ><i class="bx bx-highlight"></i
+          ></a>
+          <a href="#"><i class="bx bx-highlight"></i></a>
+        </aside>
+      </section>
 
       <section class="content">
         <div class="container">
@@ -42,133 +43,298 @@
             <h2>Vakken</h2>
           </section>
           <section class="blog-slider">
-                <div class="blog-slider__wrp swiper-wrapper">
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="/uploads/Marit.png" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <div class="blog-slider__title">Web App From Scratch</div>
-                      <div class="blog-slider__text"><p>Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. In de foto's kun je de eindresultaten zien.</p> <p>Als ik nu terug kijk zie ik vooral chaos en veel probeer dingetjes maar dat maakt het ook wel weer leuk omdat ik dngen mocht ontdekken tijdens deze 2 weken. Best een leuk concept als groep bedacht alleen is de uitwerking wat matig.</p></div>
-                      <a href="https://github.com/Kboere/web-app-from-scratch-2324" class="blog-slider__button">Bekijk project</a>
-                    </div>
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/img/eend.png" alt="" />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Web App From Scratch</div>
+                  <div class="blog-slider__text">
+                    <p>
+                      Het eerste vak waar we mee begonnen was een goede
+                      opstarter voor mij. In mijn vorige minor had ik wel al
+                      gewerkt met HTML, CSS en JS dus dat was niet zo onbekend
+                      en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd.
+                      Tijdens deze 2 weken durende project hebben we individueel
+                      en in groepsverband gewerkt. In de foto's kun je de
+                      eindresultaten zien.
+                    </p>
+                    <p>
+                      Als ik nu terug kijk zie ik vooral chaos en veel probeer
+                      dingetjes maar dat maakt het ook wel weer leuk omdat ik
+                      dngen mocht ontdekken tijdens deze 2 weken. Best een leuk
+                      concept als groep bedacht alleen is de uitwerking wat
+                      matig.
+                    </p>
                   </div>
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <div class="blog-slider__title">Hoogtepunten</div>
-                      <div class="blog-slider__text">
-                        <ul>
-                            <li>In de pageheader een soort van 3D ervaring gemaakt</li>
-                            <li>Leren hoe scroll animations werken met CSS</li>
-                            <li>Ophalen van random images vanuit een API</li>
-                            <li>In groepsverband een leuk concept neerzetten</li>
-                            <li>Leuk begin van de minor</li>
-                        </ul>
-                      </div>
-                      <a href="https://github.com/Kboere/web-app-from-scratch-2324" class="blog-slider__button">Bekijk project</a>
-                    </div>
+                  <a
+                    href="https://github.com/Kboere/web-app-from-scratch-2324"
+                    class="blog-slider__button"
+                    >Bekijk project</a
+                  >
+                </div>
+              </div>
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="/img/scroll.png"
+                    alt=""
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                      <li>
+                        In de pageheader een soort van 3D ervaring gemaakt
+                      </li>
+                      <li>Leren hoe scroll animations werken met CSS</li>
+                      <li>Ophalen van random images vanuit een API</li>
+                      <li>In groepsverband een leuk concept neerzetten</li>
+                      <li>Leuk begin van de minor</li>
+                    </ul>
                   </div>
-                  <div class="blog-slider__pagination"></div>
-                </div>         
+                  <a
+                    href="https://github.com/Kboere/web-app-from-scratch-2324"
+                    class="blog-slider__button"
+                    >Bekijk project</a
+                  >
+                </div>
+              </div>
+              <div class="blog-slider__pagination"></div>
+            </div>
           </section>
 
           <section class="blog-slider">
             <div class="blog-slider__wrp swiper-wrapper">
               <div class="blog-slider__item right swiper-slide">
                 <div class="blog-slider__img">
-                  <img src="/uploads/Marit.png" alt="">
+                  <img src="/img/grab.png" alt="" />
                 </div>
                 <div class="blog-slider__content">
-                  <div class="blog-slider__title">Web App From Scratch</div>
-                  <div class="blog-slider__text"><p>Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. In de foto's kun je de eindresultaten zien.</p> <p>Als ik nu terug kijk zie ik vooral chaos en veel probeer dingetjes maar dat maakt het ook wel weer leuk omdat ik dngen mocht ontdekken tijdens deze 2 weken. Best een leuk concept als groep bedacht alleen is de uitwerking wat matig.</p></div>
-                  <a href="#" class="blog-slider__button">Bekijk project</a>
+                  <div class="blog-slider__title">CSS To The Rescue</div>
+                  <div class="blog-slider__text">
+                    <p>
+                      CSS to the rescue is het leukste vak van de hele minor(zoals in mijn reflectie heb verteld). Het is een vak waarbij je je eigen creativiteit de vrije loop kan laten gaan. We kregen een aantal thema's waaruit we konden kiezen en ik koos voor het thema 'Controls'.
+                    </p>
+                    <p>
+                     Ik heb gekozen voor een thema waarbij ik een soort van 'control panel' heb gemaakt. De controls die er zijn, zijn om de grijper binnen de grijpmachine te bewegen zo kun je als het ware een 'game' te spelen. Ook is er een party-mode en een special 3D ervaring waarmee je om de grijpmachine heen kunt kijken. Het was een leuk project om aan te werken en ik ben erg blij met het eindresultaat.
+                    </p>
+                  </div>
+                  <a href="https://github.com/Kboere/css-to-the-rescue" class="blog-slider__button">Bekijk project</a>
                 </div>
               </div>
               <div class="blog-slider__item right swiper-slide">
                 <div class="blog-slider__img">
-                  <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+                  <img
+                    src="/img/partie.png"
+                    alt=""
+                  />
                 </div>
                 <div class="blog-slider__content">
                   <div class="blog-slider__title">Hoogtepunten</div>
                   <div class="blog-slider__text">
                     <ul>
-                        <li>listietm1</li>
-                        <li>listietm1</li>
-                        <li>listietm1</li>
-                        <li>listietm1</li>
-                        <li>listietm1</li>
+                      <li>Het puur gebruik van alleen CSS</li>
+                      <li>3D omgeving gemaakt om, om de grijpmachine te kijken</li>
+                      <li>Control panel die daadwerkelijk werkt</li>
+                      <li>Party-mode</li>
+                      <li>Het leren van onwijs veel nieuwe CSS (zoals: custom properties & container queries)</li>
                     </ul>
                   </div>
-                  <a href="#" class="blog-slider__button">Bekijk project</a>
+                  <a href="https://github.com/Kboere/css-to-the-rescue" class="blog-slider__button">Bekijk project</a>
                 </div>
               </div>
               <div class="blog-slider__pagination right"></div>
-            </div>         
-      </section>
+            </div>
+          </section>
 
-      <section class="blog-slider">
-        <div class="blog-slider__wrp swiper-wrapper">
-          <div class="blog-slider__item swiper-slide">
-            <div class="blog-slider__img">
-              <img src="/uploads/Marit.png" alt="">
-            </div>
-            <div class="blog-slider__content">
-              <div class="blog-slider__title">Web App From Scratch</div>
-              <div class="blog-slider__text">Het eerste vak waar we mee begonnen was een goede opstarter voor mij. In mijn vorige minor had ik wel al gewerkt met HTML, CSS en JS dus dat was niet zo onbekend en gelukkig heb ik in het 2e jaar ook Blok Tech gevolgd. Tijdens deze 2 weken durende project hebben we individueel en in groepsverband gewerkt. in de foto's kun je de eindresultaten zien.</div>
-              <a href="#" class="blog-slider__button">Bekijk project</a>
-            </div>
-          </div>
-          <div class="blog-slider__item swiper-slide">
-            <div class="blog-slider__img">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
-            </div>
-            <div class="blog-slider__content">
-              <div class="blog-slider__title">Hoogtepunten</div>
-              <div class="blog-slider__text">
-                <ul>
-                    <li>listietm1</li>
-                    <li>listietm1</li>
-                    <li>listietm1</li>
-                    <li>listietm1</li>
-                    <li>listietm1</li>
-                </ul>
+
+          <section class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/img/css.png" alt="" />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hackathon</div>
+                  <div class="blog-slider__text">
+                    <p>De 10e editie van CSS Day komt er aan, en het is de bedoeling dat we iets speciaals ontwerpen voor de website voor deze gelegenheid. We zijn compleet vrij om bestaande data te gebruiken, en om designen/developen zoals we willen. Het is natuurlijk wel van belang dat het niet een statische webpagina is met overal stukjes tekst, maar iets out-of-the-box.</p>
+                    <p>Ik denk dat wij als groepje wel iets heel tofs hebben neergezet. Het is niet heel standaard en op een speelse manier wilde wij alle gasten laten zien. Ook al is het volgens Sanne een beetje gejat, Ik ben er wel trots op!</p>
+                  </div>
+                  <a href="https://github.com/AliAhmed205/hackathon2324" class="blog-slider__button">Bekijk project</a>
+                </div>
               </div>
-              <a href="#" class="blog-slider__button">Bekijk project</a>
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="/img/css1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                      <li>Een werkende random Slotmachine</li>
+                      <li>CSS Animaties die bijvoegen aan de ervaring</li>
+                      <li>Hele specifiek JS schrijven voor het ophalen van data uit de API</li>
+                      <li>het "katjingg" geluid</li>
+                      <li>Leuke groep waarmee ik samen hbe kunnen werken</li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/AliAhmed205/hackathon2324" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__pagination"></div>
             </div>
-          </div>
-          <div class="blog-slider__pagination"></div>
-        </div>         
-  </section>
+          </section>
+
+          <section class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/img/drag.png" alt="" />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Human Centered Design</div>
+                  <div class="blog-slider__text">
+                    <p>Tijdens het vak Human Centered Design maken we een exclusief ontwerp/app voor een persoon met een beperking. Deze persoon kan blind, doof of fysiek beperkt zijn, of een combinatie van deze beperkingen hebben. Onze taak is om een probleem op te lossen waar deze persoon dagelijks mee te maken heeft, zowel op het werk als in het privéleven.</p>
+                    <p>Ik mocht Nicolette Besemer dit keer helpen om een oplossing te bedenken voor het knippen en plakken van teksten op het internet. Nicolette heeft een fysiek beperking en kan daarom niet goed overweg met een toetsenbord. Met een Ipad en intuitive functions zoals een "double tap" op de ipad kan ze dit nu wel doen</p>
+                </div>
+                  <a href="https://github.com/Kboere/HCD-2324" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="/img/paste.png"
+                    alt=""
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                      <li>Een oplossing voor een specifieke doelgroep</li>
+                      <li>Weekelijkse afspraken met de doelgroep</li>
+                      <li>Het kijken vanuit een andere hoek dan "normaal"</li>
+                      <li>Drag and drop functionaliteit</li>
+                      <li>Het kopieren van geslecteerde tekst naar whatsapp versturen</li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/Kboere/HCD-2324" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__pagination right"></div>
+            </div>
+          </section>
+
+          <section class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item  swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/img/api1.png" alt="" />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">API</div>
+                  <div class="blog-slider__text">
+                    <p>Tijdens dit vak moesten we een app maken. Ik hdeze CineGram genoemd en dit is een app waarbij gebruikers in staat zijn om foto's en video's van films die ze hebben gezien te delen met hun volgers. Het stelt gebruikers ook in staat om posts van andere gebruikers te bekijken, leuk te vinden en te delen. Zoeken naar andere films kun je ook doen en een special watchlist in je eigen profiel kun je ook aanmaken.</p>
+                    <p>Ik denk dat ik heir veel geluk had omdat ik Blok Tech al had gevolgd. Het was in feite Blok tech maar dan in 4 weken. Ik ben wel heel erg blij mee wat ik gemaakt hebt omdat ik met allerlei dingen hbe kunnen testen die ik Al eens heb willen doen met een database</p>
+                </div>
+                  <a href="https://github.com/Kboere/API-2324" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="/img/api2.png"
+                    alt=""
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                      <li>Ophalen van Movies uit een API</li>
+                      <li>Database connectie warabij het mogelijk is om poste te liken en een account aan te maken</li>
+                      <li>Scroll driven animation (als instgram feel and look)</li>
+                      <li>Een PWA gemaakt zodat je het echt kunt installeren</li>
+                      <li>Een zoekfunctionaliteit</li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/Kboere/API-2324" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__pagination"></div>
+            </div>
+          </section>
+
+          <section class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img src="/img/kaart.png" alt="" />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Meesterproef | Kunst in C</div>
+                  <div class="blog-slider__text">
+                    <p>Het Laatste gedeelte van de minor is aangebroken. Wel heel jammer want ik heb echt veel geleerd. Onze opdrachtgever is Kunst in C. Stichting Kunst in C is een een dynamische en inspirerende organisatie die zich toelegt op het bevorderen en ondersteunen van kunst en cultuur in al haar vormen. Wij (een team van studenten aan de HVA) hebben een Wordpress website voor de stichting gemaakt waarin al deze kunst beelden te bekijken zijn.</p>
+                    <p>Dit project was heel erg leerzaam en leuk en heb veel creativiteit in dit project kunnen steken. Ook is het leuk om met eenechte klant gewerkt te hebben. Hieruit leerde ik ook wel dat je af en toe ook nee mag zeggen en mag opkomen voor iets waar je niet voor staat.</p>
+                  </div>
+                  <a href="https://github.com/Kboere/Meesterproef-stichting-kunst-in-c" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__item right swiper-slide">
+                <div class="blog-slider__img">
+                  <img
+                    src="/img/lijst.png"
+                    alt=""
+                  />
+                </div>
+                <div class="blog-slider__content">
+                  <div class="blog-slider__title">Hoogtepunten</div>
+                  <div class="blog-slider__text">
+                    <ul>
+                      <li>Leaflet integratie i.c.m. wordpress backend</li>
+                      <li>Werken met PHP</li>
+                      <li>Custom post types and optie pagina met ACF maken</li>
+                      <li>GSAP SideScroll gebruikt</li>
+                      <li>Een CSS only grid.list vie gemaakt</li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/Kboere/Meesterproef-stichting-kunst-in-c" class="blog-slider__button">Bekijk project</a>
+                </div>
+              </div>
+              <div class="blog-slider__pagination right"></div>
+            </div>
+          </section>
         </div>
       </section>
     </main>
 
-    <footer>
-      <%- include('../partials/footer'); %>
-    </footer>
+    <footer><%- include('../partials/footer'); %></footer>
     <!-- <script src="/js/index.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
     <script>
       // Select all elements with the class .blog-slider
-document.querySelectorAll('.blog-slider').forEach((slider) => {
-  new Swiper(slider, {
-    spaceBetween: 30,
-    effect: 'fade',
-    loop: true,
-    mousewheel: {
-      invert: false,
-    },
-    // autoHeight: true, // Uncomment if you need autoHeight
-    pagination: {
-      el: slider.querySelector('.blog-slider__pagination'),
-      clickable: true,
-    }
-  });
-});
+      document.querySelectorAll(".blog-slider").forEach((slider) => {
+        new Swiper(slider, {
+          spaceBetween: 30,
+          effect: "fade",
+          loop: true,
+          mousewheel: {
+            invert: false,
+          },
+          // autoHeight: true, // Uncomment if you need autoHeight
+          pagination: {
+            el: slider.querySelector(".blog-slider__pagination"),
+            clickable: true,
+          },
+        });
+      });
     </script>
   </body>
 </html>
